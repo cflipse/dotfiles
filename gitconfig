@@ -1,0 +1,22 @@
+[ui]
+  color = auto
+[color]
+	ui = auto
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	track = branch --track
+	amend = commit --amend
+	review = log -p -b
+[user]
+	name = Chris Flipse
+	email = cflipse@gmail.com
+[github]
+	user = cflipse
+	token = f51b06f51afde717d7e91613af7182aa
+[core]
+	excludesfile = /home/flip/.gitignore
+	#editor = gvim --nofork
+[rerere]
+	enabled = 1
