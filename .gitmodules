@@ -1,6 +1,3 @@
-[submodule "vim/bundle/vim-haml"]
-	path = vim/bundle/vim-haml
-	url = http://github.com/tpope/vim-haml
 [submodule "vim/bundle/vim-rails"]
 	path = vim/bundle/vim-rails
 	url = git://github.com/tpope/vim-rails
