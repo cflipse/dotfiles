@@ -33,5 +33,5 @@ autocmd BufNewFile,BufRead *.rb      map <f6> :!spec -rubygems -rspec %<cr>
 "autocmd BufWritePost *_spec.rb make %
 
 
-" FIND PATHOGEN -- plugin manager
 " Command-T (better than fuzzy-finder)
+call pathogen#runtime_append_all_bundles() 
