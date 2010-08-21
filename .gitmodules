@@ -1,24 +1,27 @@
-[submodule "vim/bundle/vim-rails"]
-	path = vim/bundle/vim-rails
+[submodule "bundle/vim-haml"]
+	path = bundle/vim-haml
+	url = http://github.com/tpope/vim-haml
+[submodule "bundle/vim-rails"]
+	path = bundle/vim-rails
 	url = git://github.com/tpope/vim-rails
-[submodule "vim/bundle/vim-fugitive"]
-	path = vim/bundle/vim-fugitive
+[submodule "bundle/vim-fugitive"]
+	path = bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive
-[submodule "vim/bundle/vim-git"]
-	path = vim/bundle/vim-git
+[submodule "bundle/vim-git"]
+	path = bundle/vim-git
 	url = git://github.com/tpope/vim-git
-[submodule "vim/bundle/vim-endwise"]
-	path = vim/bundle/vim-endwise
+[submodule "bundle/vim-endwise"]
+	path = bundle/vim-endwise
 	url = git://github.com/tpope/vim-endwise
-[submodule "vim/bundle/vim-cucumber"]
-	path = vim/bundle/vim-cucumber
+[submodule "bundle/vim-cucumber"]
+	path = bundle/vim-cucumber
 	url = git://github.com/tpope/vim-cucumber
-[submodule "vim/bundle/vim-markdown"]
-	path = vim/bundle/vim-markdown
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
 	url = git://github.com/tpope/vim-markdown
-[submodule "vim/bundle/vim-surround"]
-	path = vim/bundle/vim-surround
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
 	url = git://github.com/tpope/vim-surround
-[submodule "vim/bundle/vim-haml"]
-	path = vim/bundle/vim-haml
+[submodule "bundle/vim-haml"]
+	path = bundle/vim-haml
 	url = http://github.com/tpope/vim-haml.git
