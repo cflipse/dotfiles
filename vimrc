@@ -16,8 +16,8 @@ set foldlevel=2
 set guioptions-=T
 
 set et
-set sw=4
-set ts=4
+set sw=2
+set ts=2
 
 set ai
 set si
