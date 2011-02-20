@@ -27,6 +27,8 @@ autocmd BufNewFile,BufRead *.rb      map <f6> :!spec -rubygems %<cr>
 autocmd BufNewFile,BufRead *_spec.rb map <f5> :!spec -rubygems -rspec %<cr>
 autocmd BufNewFile,BufRead *.rb      map <f6> :!spec -rubygems -rspec %<cr>
 
+runtime macros/matchit.vim
+
 
 " use makegreen 
 "autocmd BufNewFile,BufRead *_spec.rb compiler rspec
