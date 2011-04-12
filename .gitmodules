@@ -40,3 +40,6 @@
 [submodule "bundle/vim-ruby-refactoring"]
 	path = bundle/vim-ruby-refactoring
 	url = https://github.com/ecomba/vim-ruby-refactoring.git
+[submodule "bundle/colors-solarized"]
+	path = bundle/colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git

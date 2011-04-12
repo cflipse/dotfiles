@@ -14,7 +14,7 @@ set foldmethod=syntax
 set foldlevel=2
 set guioptions-=T
 
-color buttercream
+color solarized
 set cursorline
 hi CursorLine   cterm=NONE ctermbg=darkgrey  guibg=darkgrey
 
@@ -25,7 +25,6 @@ set sw=2
 set ts=2
 
 set ai
-set si
 
 if has("automcd")
   filetype indent plugin on

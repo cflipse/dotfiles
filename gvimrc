@@ -1,4 +1,5 @@
-color neverness
+"color neverness
+color solarized
 
 set guioptions-=T
 set guioptions-=L
