@@ -1,5 +1,6 @@
 "color neverness
 color solarized
+color vividchalk
 
 set guioptions-=T
 set guioptions-=L

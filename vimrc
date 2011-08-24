@@ -4,8 +4,7 @@ runtime! debian.vim
 set nocompatible
 
 syntax on
-call pathogen#runtime_append_all_bundles('bundle')
-"call pathogen#runtime_append_all_bundles() 
+call pathogen#infect()
 
 set background=dark 
 set lcs=eol:$,tab:>·,trail:·
