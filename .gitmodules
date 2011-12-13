@@ -8,9 +8,6 @@
 	path = bundle/vim-git
 	url = git://github.com/tpope/vim-git
   ignore = dirty
-[submodule "bundle/vim-endwise"]
-	path = bundle/vim-endwise
-	url = git://github.com/tpope/vim-endwise
 [submodule "bundle/vim-cucumber"]
 	path = bundle/vim-cucumber
 	url = git://github.com/tpope/vim-cucumber
