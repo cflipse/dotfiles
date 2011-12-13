@@ -4,7 +4,6 @@ runtime! debian.vim
 set nocompatible
 
 syntax on
-call pathogen#infect()
 
 set background=dark 
 set lcs=eol:$,tab:>·,trail:·
@@ -31,6 +30,7 @@ end
 
 runtime macros/matchit.vim
 
+call pathogen#infect()
 
 
 " Vim functions to run RSpec and Cucumber on the current file and optionally on
