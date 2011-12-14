@@ -24,7 +24,7 @@ set ts=2
 
 set ai
 
-if has("automcd")
+if has("autocmd")
   filetype indent plugin on
 end
 
