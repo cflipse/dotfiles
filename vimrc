@@ -12,12 +12,6 @@ set foldmethod=syntax
 set foldlevel=2
 set guioptions-=T
 
-"color solarized
-set cursorline
-hi CursorLine   cterm=NONE ctermbg=darkgrey  guibg=darkgrey
-
-
-
 set et
 set sw=2
 set ts=2
