@@ -13,11 +13,9 @@ set foldlevel=5
 set nofoldenable
 set guioptions-=T
 
-set et
-set sw=2
-set ts=2
+set et sw=2 ts=2 ai
 
-set ai
+set ic sc
 
 if has("autocmd")
   filetype indent plugin on
