@@ -1,7 +1,14 @@
 let mapleader=','
-
 runtime! debian.vim
+runtime macros/matchit.vim
 set nocompatible
+
+if has("autocmd")
+  filetype indent plugin on
+end
+
+call pathogen#infect()
+
 
 syntax on
 
@@ -17,11 +24,3 @@ set et sw=2 ts=2 ai
 set statusline=2
 
 set ic sc
-
-if has("autocmd")
-  filetype indent plugin on
-end
-
-runtime macros/matchit.vim
-
-call pathogen#infect()
