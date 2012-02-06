@@ -21,6 +21,9 @@ set nofoldenable
 set guioptions-=T
 
 set et sw=2 ts=2 ai
+set ruler
 set laststatus=2
+
+set autoread
 
 set ic sc
