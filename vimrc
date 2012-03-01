@@ -13,7 +13,7 @@ call pathogen#infect()
 syntax on
 
 set background=dark 
-set lcs=eol:$,tab:>·,trail:·
+set lcs=tab:>·,trail:· list
 
 set foldmethod=syntax
 set foldlevel=5
