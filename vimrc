@@ -27,3 +27,10 @@ set laststatus=2
 set autoread
 
 set ic sc
+
+map <leader>t :!rspec -fn %<cr>
+map <leader>T :!rspec -fn<cr>
+map <leader>w :!cucumber -pwip<cr>
+map <leader>c :!cucumber<cr>
+
+
