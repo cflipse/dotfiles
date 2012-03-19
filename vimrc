@@ -7,10 +7,10 @@ if has("autocmd")
   filetype indent plugin on
 end
 
+syntax on
 call pathogen#infect()
 
 
-syntax on
 
 set background=dark 
 set lcs=tab:>·,trail:· list
@@ -32,5 +32,9 @@ map <leader>t :!rspec -fn %<cr>
 map <leader>T :!rspec -fn<cr>
 map <leader>w :!cucumber -pwip<cr>
 map <leader>c :!cucumber<cr>
+
+set winheight=12
+set winminheight=10
+set winheight=1000
 
 
