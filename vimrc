@@ -34,7 +34,7 @@ map <leader>w :!cucumber -pwip<cr>
 map <leader>c :!cucumber<cr>
 
 set winheight=12
-set winminheight=10
+set winminheight=7
 set winheight=1000
 
 
