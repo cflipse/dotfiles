@@ -38,3 +38,6 @@ set winminheight=10
 set winheight=1000
 
 
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
