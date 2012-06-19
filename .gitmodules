@@ -53,3 +53,12 @@
 [submodule "bundle/vim-abolish"]
 	path = bundle/vim-abolish
 	url = https://github.com/tpope/vim-abolish.git
+[submodule "bundle/vimux"]
+	path = bundle/vimux
+	url = git://github.com/benmills/vimux.git
+[submodule "bundle/vimux-ruby-test"]
+	path = bundle/vimux-ruby-test
+	url = git://github.com/pgr0ss/vimux-ruby-test.git
+[submodule "bundle/vimux-cucumber"]
+	path = bundle/vimux-cucumber
+	url = git://github.com/cloud8421/vimux-cucumber.git
