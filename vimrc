@@ -1,6 +1,7 @@
 let mapleader=','
 runtime! debian.vim
 runtime macros/matchit.vim
+let g:solarized_termcolors=256
 set nocompatible
 
 if has("autocmd")
@@ -33,8 +34,7 @@ map <leader>T :!rspec -fn<cr>
 map <leader>w :!cucumber -pwip<cr>
 map <leader>c :!cucumber<cr>
 
-set winheight=12
-set winminheight=10
+set winheight=10
+set winminheight=5
 set winheight=1000
-
 
