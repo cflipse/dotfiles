@@ -1,8 +1,12 @@
 let mapleader=','
 runtime! debian.vim
 runtime macros/matchit.vim
-let g:solarized_termcolors=256
 set nocompatible
+
+" all my terminals are full color....
+set t_Co=256
+let g:solarized_termcolors=256
+
 
 if has("autocmd")
   filetype indent plugin on
