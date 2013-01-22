@@ -43,6 +43,11 @@ set winminheight=7
 set winheight=1000
 
 
+let g:neocomplcache_enable_cursor_hold_i=1
+let g:neocomplcache_enable_at_startup = 1
+
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+
