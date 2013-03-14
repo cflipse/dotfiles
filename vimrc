@@ -38,9 +38,9 @@ map <leader>T :!rspec -fn<cr>
 map <leader>w :!cucumber -pwip<cr>
 map <leader>c :!cucumber<cr>
 
-set winheight=12
-set winminheight=7
-set winheight=1000
+"set winheight=12
+"set winminheight=7
+"set winheight=1000
 
 
 let g:neocomplcache_enable_cursor_hold_i=1
