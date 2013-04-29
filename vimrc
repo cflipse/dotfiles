@@ -50,6 +50,7 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
+autocmd Filetype gitcommit setlocal spell textwidth=72
 
 
 autocmd FileType cucumber compiler cucumber | setl makeprg=cucumber\ \"%:p\"
