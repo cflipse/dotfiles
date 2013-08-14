@@ -71,3 +71,6 @@
 [submodule "bundle/vim-vroom"]
 	path = bundle/vim-vroom
 	url = git://github.com/skalnik/vim-vroom.git
+[submodule "bundle/vim-dispatch"]
+	path = bundle/vim-dispatch
+	url = git@github.com:tpope/vim-dispatch.git
