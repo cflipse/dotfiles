@@ -13,7 +13,28 @@ if has("autocmd")
 end
 
 syntax on
-call pathogen#infect()
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-rake'
+Bundle 'kana/vim-textobj-user'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'ecomba/vim-ruby-refactoring'
+
+Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-abolish'
+
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'Colour-Sampler-Pack'
+Bundle 'Solarized'
 
 
 
