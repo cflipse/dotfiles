@@ -88,3 +88,5 @@ autocmd FileType ruby
           \ endif
 autocmd User Bundler
           \ if &makeprg !~# 'bundle' | setl makeprg^=bundle\ exec\  | endif
+
+let g:ruby_indent_access_modifier_style = 'outdent'
