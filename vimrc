@@ -89,4 +89,24 @@ autocmd FileType ruby
 autocmd User Bundler
           \ if &makeprg !~# 'bundle' | setl makeprg^=bundle\ exec\  | endif
 
+
+
+
+
+function! LoadAndDisplayRSpecQuickfix()
+  let quickfix_filename = ".git/quickfix.out"
+  if filereadable(quickfix_filename) && getfsize(quickfix_filename) != 0
+    silent execute ":cfile " . quickfix_filename
+    botright cwindow
+    cc
+  else
+    redraw!
+    echohl WarningMsg | echo "Quickfix file " . quickfix_filename . " is missing or empty." | echohl None
+  endif
+endfunction
+
+noremap <Leader>q :call LoadAndDisplayRSpecQuickfix()<cr>
+
+
+
 let g:ruby_indent_access_modifier_style = 'outdent'
