@@ -60,6 +60,8 @@ map <leader>T :!rspec -fn<cr>
 map <leader>w :!cucumber -pwip<cr>
 map <leader>c :!cucumber<cr>
 
+map <leader>g :grep <cword><cr>
+
 "set winheight=12
 "set winminheight=7
 "set winheight=1000
