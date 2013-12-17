@@ -25,17 +25,21 @@ Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-unimpaired'
 Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'ecomba/vim-ruby-refactoring'
 
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-abolish'
+Bundle 'tpope/vim-endwise'
 
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'Colour-Sampler-Pack'
 Bundle 'Solarized'
 Bundle 'christoomey/vim-tmux-navigator'
+"Bundle 'rainerborene/vim-reek'
+"Bundle 'bronson/vim-runtest'
 
 
 
