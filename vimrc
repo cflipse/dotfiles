@@ -40,7 +40,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'Colour-Sampler-Pack'
 Bundle 'Solarized'
-Bundle 'christoomey/vim-tmux-navigator'
+"Bundle 'christoomey/vim-tmux-navigator'
 "Bundle 'rainerborene/vim-reek'
 "Bundle 'bronson/vim-runtest'
 
