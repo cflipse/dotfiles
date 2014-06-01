@@ -39,11 +39,11 @@ Plugin 'bling/vim-airline'
 
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-endwise'
+"Bundle 'tpope/vim-endwise'
 
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'Colour-Sampler-Pack'
-Bundle 'Solarized'
+"Bundle 'Solarized'
 "Bundle 'christoomey/vim-tmux-navigator'
 "Bundle 'rainerborene/vim-reek'
 "Bundle 'bronson/vim-runtest'
