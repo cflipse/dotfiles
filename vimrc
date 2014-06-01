@@ -26,6 +26,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-rbenv'
 Bundle 'kana/vim-textobj-user'
@@ -65,8 +66,8 @@ set autoread
 
 set ic sc
 
-map <leader>t :!rspec -fp %<cr>
-map <leader>T :!rspec -fp<cr>
+map <leader>t :Dispatch rspec -fp %<cr>
+map <leader>T :Dispatch rspec -fp<cr>
 map <leader>w :!cucumber -pwip<cr>
 map <leader>c :!cucumber<cr>
 
