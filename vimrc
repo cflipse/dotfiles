@@ -33,6 +33,9 @@ Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'godlygeek/tabular'
 
+Plugin 'bling/vim-airline'
+
+
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-endwise'
@@ -117,3 +120,5 @@ noremap <Leader>q :call LoadAndDisplayRSpecQuickfix()<cr>
 
 
 let g:ruby_indent_access_modifier_style = 'outdent'
+let g:airline_powerline_fonts = 1  " use  the powerline fonts
+let g:airline_theme='badwolf'
