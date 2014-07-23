@@ -43,8 +43,8 @@ Bundle 'tpope/vim-abolish'
 
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'Colour-Sampler-Pack'
-"Bundle 'Solarized'
-"Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'Solarized'
+Bundle 'christoomey/vim-tmux-navigator'
 "Bundle 'rainerborene/vim-reek'
 "Bundle 'bronson/vim-runtest'
 
