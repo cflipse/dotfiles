@@ -66,7 +66,7 @@ set autoread
 
 set ic sc
 
-map <leader>t :Dispatch rspec -fp -tfocus<cr>
+map <leader>t :Dispatch rspec -fp %<cr>
 map <leader>T :Dispatch rspec -fp<cr>
 map <leader>w :!cucumber -pwip<cr>
 map <leader>c :!cucumber<cr>
