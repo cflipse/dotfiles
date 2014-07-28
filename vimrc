@@ -42,15 +42,14 @@ Bundle 'tpope/vim-abolish'
 "Bundle 'tpope/vim-endwise'
 
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'Colour-Sampler-Pack'
-Bundle 'Solarized'
+"Bundle 'Colour-Sampler-Pack'
+Bundle 'ndzou/vim-colorschemes'
 Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'altercation/vim-colors-solarized.git'
 "Bundle 'rainerborene/vim-reek'
 "Bundle 'bronson/vim-runtest'
 
 
-
-set background=dark 
 set lcs=tab:>·,trail:· list
 
 set foldmethod=syntax
