@@ -122,4 +122,4 @@ noremap <Leader>q :call LoadAndDisplayRSpecQuickfix()<cr>
 
 let g:ruby_indent_access_modifier_style = 'outdent'
 let g:airline_powerline_fonts = 1  " use  the powerline fonts
-let g:airline_theme='badwolf'
+let g:airline_theme='solarized'
