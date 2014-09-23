@@ -49,6 +49,7 @@ Bundle 'altercation/vim-colors-solarized.git'
 "Bundle 'rainerborene/vim-reek'
 "Bundle 'bronson/vim-runtest'
 
+Bundle 'othree/html5.vim'
 
 set lcs=tab:>·,trail:· list
 
