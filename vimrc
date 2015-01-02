@@ -67,10 +67,10 @@ set autoread
 
 set ic sc
 
-map <leader>t :!rspec -fp %<cr>
-map <leader>T :!rspec -fp<cr>
-map <leader>w :!cucumber -pwip<cr>
-map <leader>c :!cucumber<cr>
+map <leader>t :!bundle exec rspec -fp %<cr>
+map <leader>T :!bundle exec rspec -fp<cr>
+map <leader>w :!bundle exec cucumber -pwip<cr>
+map <leader>c :!bundle exec cucumber<cr>
 
 map <leader>g :grep <cword><cr>
 
