@@ -51,6 +51,7 @@ Plugin 'altercation/vim-colors-solarized.git'
 "Plugin 'bronson/vim-runtest'
 
 Plugin 'othree/html5.vim'
+Plugin 'ngmy/vim-rubocop'
 
 set lcs=tab:>·,trail:· list
 
