@@ -132,3 +132,5 @@ let g:airline_theme='solarized'
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.ex,*.exs set filetype=elixir
 
+
+:hi! Normal cterm=NONE term=NONE ctermfg=12 ctermbg=8
