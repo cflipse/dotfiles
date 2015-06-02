@@ -36,6 +36,7 @@ Plugin 'godlygeek/tabular'
 "Plugin 'airblade/vim-gitgutter'
 
 Plugin 'bling/vim-airline'
+Plugin 'elixir-lang/vim-elixir'
 
 
 Plugin 'tpope/vim-bundler'
@@ -128,3 +129,5 @@ let g:airline_theme='solarized'
 
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufReadPost *.ex,*.exs set filetype=elixir
+
