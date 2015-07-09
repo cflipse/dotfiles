@@ -12,7 +12,6 @@ if has("autocmd")
   filetype indent plugin on
 end
 
-syntax on
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -26,7 +25,7 @@ Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-commentary'
-"Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-dispatch'
 "Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-rbenv'
 Plugin 'kana/vim-textobj-user'
@@ -49,7 +48,6 @@ Plugin 'ndzou/vim-colorschemes'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'altercation/vim-colors-solarized.git'
 "Plugin 'rainerborene/vim-reek'
-"Plugin 'bronson/vim-runtest'
 
 Plugin 'othree/html5.vim'
 Plugin 'ngmy/vim-rubocop'
@@ -85,52 +83,20 @@ map <leader>g :grep <cword><cr>
 let g:neocomplcache_enable_cursor_hold_i=1
 let g:neocomplcache_enable_at_startup = 1
 
+hi! Normal cterm=NONE term=NONE ctermfg=12 ctermbg=NONE
+
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
-autocmd Filetype gitcommit setlocal spell textwidth=72
-
-
-autocmd FileType cucumber compiler cucumber | setl makeprg=cucumber\ \"%:p\"
-autocmd FileType ruby
-          \ if expand('%') =~# '_test\.rb$' |
-          \   compiler rubyunit | setl makeprg=testrb\ \"%:p\" |
-          \ elseif expand('%') =~# '_spec\.rb$' |
-          \   compiler rspec | setl makeprg=rspec\ \"%:p\" |
-          \ else |
-          \   compiler ruby | setl makeprg=ruby\ -wc\ \"%:p\" |
-          \ endif
-autocmd User Bundler
-          \ if &makeprg !~# 'bundle' | setl makeprg^=bundle\ exec\  | endif
-
-
-
-
-
-function! LoadAndDisplayRSpecQuickfix()
-  let quickfix_filename = ".git/quickfix.out"
-  if filereadable(quickfix_filename) && getfsize(quickfix_filename) != 0
-    silent execute ":cfile " . quickfix_filename
-    botright cwindow
-    cc
-  else
-    redraw!
-    echohl WarningMsg | echo "Quickfix file " . quickfix_filename . " is missing or empty." | echohl None
-  endif
-endfunction
-
-noremap <Leader>q :call LoadAndDisplayRSpecQuickfix()<cr>
-
+syntax on
 
 
 let g:ruby_indent_access_modifier_style = 'outdent'
 let g:airline_powerline_fonts = 1  " use  the powerline fonts
 let g:airline_theme='solarized'
 
-
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.ex,*.exs set filetype=elixir
 
-
-:hi! Normal cterm=NONE term=NONE ctermfg=12 ctermbg=8
+autocmd Filetype gitcommit setlocal spell textwidth=72
