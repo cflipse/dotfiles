@@ -41,6 +41,7 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-abolish'
 "Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fireplace'
 
 Plugin 'vim-ruby/vim-ruby'
 "Plugin 'Colour-Sampler-Pack'
