@@ -11,9 +11,8 @@ if has("autocmd")
   filetype indent plugin on
 end
 
-
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#begin()
 
 Plugin 'gmarik/vundle'
 Plugin 'tpope/vim-rails'
@@ -45,7 +44,7 @@ Plugin 'tpope/vim-fireplace'
 
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'Colour-Sampler-Pack'
+"Plugin 'Colour-Sampler-Pack'
 Plugin 'ndzou/vim-colorschemes'
 Plugin 'christoomey/vim-tmux-navigator'
 "Plugin 'rainerborene/vim-reek'
@@ -54,6 +53,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'othree/html5.vim'
 Plugin 'ngmy/vim-rubocop'
 
+call vundle#end()
 
 
 set lcs=tab:>·,trail:· list
