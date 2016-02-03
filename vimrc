@@ -28,6 +28,8 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-rbenv'
 "Plugin 'scrooloose/syntastic'
 
+Plugin 'janko-m/vim-test'
+
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'ecomba/vim-ruby-refactoring'
@@ -58,6 +60,10 @@ Plugin 'gundo'
 Plugin 'ag.vim'
 Plugin 'ctrlp.vim'
 
+if has('nvim')
+  Plugin 'kassio/neoterm'
+endif
+
 call vundle#end()
 
 
@@ -82,12 +88,16 @@ set noshowmatch
 
 set lazyredraw
 
-map <leader>t :!bundle exec rspec -fp %<cr>
-map <leader>T :!bundle exec rspec -fp<cr>
+
+map <leader>f :TestNearest<cr>
+map <leader>t :TestFile<cr>
+map <leader>l :TestLast<cr>
+map <leader>T :TestSuite<cr>
+map <leader>n :TestSuite --next-failure<cr>
 map <leader>w :!bundle exec cucumber -pwip<cr>
 map <leader>c :!bundle exec cucumber<cr>
 
-map <leader>g :grep <cword><cr>
+map <leader>g :Ag <cword><cr>
 
 " highlight last inserted text
 nnoremap gV `[v`]
