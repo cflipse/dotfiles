@@ -1,0 +1,25 @@
+[ui]
+  color = auto
+[color]
+	ui = auto
+[alias]
+	st = status -s
+	ci = commit
+	co = checkout
+	track = branch --track
+	amend = commit --amend
+	review = log -p -b
+  lg = log --graph --oneline --decorate --date=short --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s'
+  unchanged = update-index --assume-unchanged
+[user]
+	name = Chris Flipse
+[core]
+	editor = vim
+[rerere]
+	enabled = 1
+[rebase]
+	autosquash = true
+[push]
+	default = simple
+[include]
+  path = .gitconfig.local
