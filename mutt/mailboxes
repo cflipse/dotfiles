@@ -1,0 +1,10 @@
+#
+# Mailboxen
+#
+
+mailboxes +Gaming
+mailboxes +Tech
+
+
+mailboxes imaps://flip@athas.org@imap.gmail.com/INBOX
+mailboxes imaps://cflipse@gmail.com@imap.gmail.com/INBOX

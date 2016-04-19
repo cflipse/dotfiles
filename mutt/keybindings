@@ -1,0 +1,44 @@
+# Key Remppings
+#
+macro index G |urlview\n 'call urlview to extract URLs out of a message'
+macro pager G |urlview\n 'call urlview to extract URLs out of a message'
+bind index l list-reply
+bind pager l list-reply
+bind index L limit
+
+bind index \\ next-new
+bind pager \\ next-new
+bind index \t next-unread
+bind pager \t next-unread
+
+
+#macro    index   A   ":set pipe_decode\n|mail2muttalias.py\n:source\
+#                        ~/.mutt/aliases\n:unset pipe_decode\n" \
+#                        "Create new alias from the actual message"
+
+macro   index   \ea "!$EDITOR ~/.alias\n:source ~/.alias\n" \
+            "Edit aliases file and reload it"
+
+#macro index A |lbdb-fetchaddr\n
+#macro pager A |lbdb-fetchaddr\n
+
+#macro index \eb '/~b' 'search in message bodies'
+
+#macro index \eb "|bogofilter -s\n"  "Blacklist the message as spam"
+#macro pager \eb "|bogofilter -s\n"  "Blacklist the message as spam"
+#macro index \eB "|bogofilter -S\n"  "unBlacklist the message as spam"
+#macro pager \eB "|bogofilter -S\n"  "unBlacklist the message as spam"
+
+#macro index \ew "|bogofilter -n\n"  "Whitelist this message as non-spam"
+#macro pager \ew "|bogofilter -n\n"  "Whitelist this message as non-spam"
+#macro index \eW "|bogofilter -N\n"  "unWhitelist this message as non-spam"
+#macro pager \eW "|bogofilter -N\n"  "unWhitelist this message as non-spam"
+
+macro index y 'L~N|~O|~F'\n 'view only unread messages'
+macro index Y 'L.*'\n 'view all messages'
+
+#macro index \ew "|spamassassin -W\n" 'Whitelist the addesses in this message'
+#macro pager \ew "|spamassassin -W\n" 'Whitelist the addesses in this message'
+
+#macro index \eW "|spamassassin -R\n" 'UnWhitelist the addesses in this message'
+#macro pager \eW "|spamassassin -R\n" 'UnWhitelist the addesses in this message'

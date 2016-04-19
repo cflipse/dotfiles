@@ -1,0 +1,10 @@
+source ~/.mutt/settings
+source ~/.mutt/keybindings
+#source ~/.mutt/alias
+source ~/.mutt/color
+
+
+set certificate_file=~/.mutt/certificates
+
+source ~/.mutt/mailboxes
+source ~/.mutt/hooks

@@ -1,0 +1,20 @@
+# Colors
+#
+color normal 	white default
+color status 	brightblue default
+color hdrdefault brightblack default
+color header green default ^(To|Cc|Date):
+color header brightgreen default ^(Subject|From):
+color tree red default
+color indicator black cyan
+color markers red default
+color attachment brightyellow default
+color signature cyan default
+color quoted cyan default
+color tilde default default
+
+# URI highlihting
+color body	red default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+color body	red default (https?|ftp)://[\-\.\,/%~_:?\#a-zA-Z0-9]+
+
+#color index red black "~t bam@debian.org | ~x scrooge.chocbit.org.au"

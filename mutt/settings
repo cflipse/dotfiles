@@ -1,0 +1,68 @@
+##
+## settings
+##
+set abort_nosubject=no
+set alias_file="~/.mutt/alias"
+alternates cflipse@.*|flip@.*|rcf6497@.*rit.edu|(webmaster|ds3-errata)@athas.org
+#set autoedit
+set nobeep
+set noconfirmappend
+set delete=yes
+set edit_headers
+set editor="vim +/^$/ " 
+set fast_reply
+#set auto_tag
+set beep_new
+set folder_format="%N %F %2l %-8.8u %-8.8g %8s %d %f"
+set forward_format="[%a : %s]"
+set from="Chris Flipse <flip@csh.rit.edu>"
+set hidden_host
+set history=20
+set ignore_list_reply_to
+set index_format="%4C %Z %{%b %d} %-15.15F %5c %s"
+
+#set implicit_autoview
+set include=yes
+set mark_old
+set menu_scroll
+set mime_forward
+set move=no
+set reverse_name
+set record="+Sent"
+set save_name
+set sort=threads
+set sort_aux=date
+set use_from
+
+set print_command="a2ps"
+
+# these affect the display
+set help=no
+set pager_context=1
+set pager_index_lines=5
+
+#auto_view text/html
+
+#
+# GPG Configuration
+#
+set pgp_autosign
+set pgp_replyencrypt
+set pgp_sign_as="flip"
+#set pgp_getkeys_command="/usr/bin/gpg --recv-keys %r"
+
+#
+# Header cleanup
+ignore *
+
+unignore Date: To: From: Cc: Subject:
+hdr_order Date: From: To: Cc: Subject:
+
+# mailboxes
+#set folder="imaps://flip@devcaffeine.com/INBOX"
+#set spoolfile="imaps://flip@devcaffeine.com/INBOX"
+
+set imap_user="cflipse@gmail.com"
+set spoolfile='imaps://imap.gmail.com/INBOX'
+
+

@@ -1,0 +1,20 @@
+subscribe debian- kotw intp wear-hard cryptography
+subscribe dark-sun-l bwoa webmasters-l senate overcouncil ds3docs
+subscribe classes world 
+
+lists templarate@ senate@ overcouncil@
+
+
+send-hook . unmy_hdr From
+send-hook . set pgp_autosign
+send-hook . set signature="~/.sigs/general"
+
+# Dark Sun list stuff
+send-hook dark-sun-l@ unset pgp_autosign
+send-hook (wizards.com)|(athas.org) \
+    my_hdr From: Chris Flipse <flip@athas.org>
+send-hook (wizards.com)|(athas.org) \
+    set signature="~/.sigs/darksun"
+
+# Debian lists
+send-hook debian.org my_hdr From: Chris Flipse <flip@csh.rit.edu>
