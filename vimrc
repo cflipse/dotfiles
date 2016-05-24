@@ -60,6 +60,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'gundo'
 Plugin 'ag.vim'
 Plugin 'ctrlp.vim'
+Plugin 'avdgaag/vim-phoenix'
 
 if has('nvim')
   Plugin 'kassio/neoterm'
