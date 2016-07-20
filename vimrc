@@ -72,7 +72,7 @@ call vundle#end()
 
 set lcs=tab:>·,trail:· list
 
-set foldmethod=syntax
+set foldmethod=indent
 set foldlevelstart=10
 set foldnestmax=10
 set foldenable
