@@ -1,2 +1,5 @@
 .*.sw?
 .envrc
+.*~
+
+config/secrets.yml

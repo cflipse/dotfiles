@@ -120,7 +120,7 @@ hi! Normal cterm=NONE term=NONE ctermfg=12 ctermbg=NONE
 let g:solarized_termtrans = 1
 let g:ruby_indent_access_modifier_style = 'outdent'
 
-let g:airline_theme='solarized'
+let g:airline_theme='powerlineish'
 let g:airline_powerline_fonts = 1  " use  the powerline fonts
 
 if !exists('g:airline_symbols')
