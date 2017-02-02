@@ -92,6 +92,12 @@ set noshowmatch
 
 set lazyredraw
 
+" search recursively
+set path+=**
+set wildmenu
+
+
+let g:netrw_banner=0
 
 map <leader>f :TestNearest<cr>
 map <leader>t :TestFile<cr>
