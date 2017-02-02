@@ -1,5 +1,6 @@
 .*.sw?
 .envrc
 .*~
+.byebug_history
 
 config/secrets.yml
