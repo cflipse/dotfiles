@@ -63,6 +63,7 @@ Plugin 'gundo'
 Plugin 'ag.vim'
 Plugin 'ctrlp.vim'
 Plugin 'avdgaag/vim-phoenix'
+Plugin 'w0rp/ale'
 
 if has('nvim')
   Plugin 'kassio/neoterm'
