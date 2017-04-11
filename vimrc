@@ -30,7 +30,7 @@ Plugin 'tpope/vim-rbenv'
 "Plugin 'scrooloose/syntastic'
 
 Plugin 'janko-m/vim-test'
-"Plugin 'benmills/vimux'
+Plugin 'benmills/vimux'
 
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
@@ -131,7 +131,8 @@ let g:ruby_indent_access_modifier_style = 'outdent'
 let g:airline_theme='powerlineish'
 let g:airline_powerline_fonts = 1  " use  the powerline fonts
 
-let test#strategy = 'dispatch'
+"let test#strategy = 'dispatch'
+let test#strategy = 'vimux'
 
 
 if !exists('g:airline_symbols')
