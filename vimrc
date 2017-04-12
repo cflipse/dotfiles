@@ -44,7 +44,7 @@ Plugin 'elixir-lang/vim-elixir'
 
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-abolish'
-"Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fireplace'
 
 Plugin 'altercation/vim-colors-solarized.git'
@@ -84,6 +84,7 @@ set et sw=2 ts=2 ai
 set ruler
 set laststatus=2
 
+set relativenumber
 set number
 set colorcolumn=80
 set autoread
