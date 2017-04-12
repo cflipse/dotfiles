@@ -15,53 +15,51 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 
 Plugin 'gmarik/vundle'
-Plugin 'tpope/vim-projectionist'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-git'
-Plugin 'tpope/vim-cucumber'
-"Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-dispatch'
-"Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-rbenv'
-"Plugin 'scrooloose/syntastic'
-
-Plugin 'janko-m/vim-test'
-Plugin 'benmills/vimux'
-
 Plugin 'kana/vim-textobj-user'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'ecomba/vim-ruby-refactoring'
-Plugin 'godlygeek/tabular'
-Plugin 'airblade/vim-gitgutter'
 
-Plugin 'elixir-lang/vim-elixir'
+Plugin 'tpope/vim-projectionist'
 
-"Plugin 'CSApprox'
-
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fireplace'
-
-Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'Colour-Sampler-Pack'
-Plugin 'flazz/vim-colorschemes'
+Plugin 'tpope/vim-dispatch'
+Plugin 'benmills/vimux'
 Plugin 'christoomey/vim-tmux-navigator'
-"Plugin 'rainerborene/vim-reek'
-Plugin 'majutsushi/tagbar'
 
+Plugin 'tpope/vim-git'
 Plugin 'othree/html5.vim'
-Plugin 'ngmy/vim-rubocop'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'gundo'
+
 Plugin 'ag.vim'
 Plugin 'ctrlp.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'gundo'
+Plugin 'janko-m/vim-test'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+"Plugin 'majutsushi/tagbar'
+
+Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'Colour-Sampler-Pack'
+Plugin 'flazz/vim-colorschemes'
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'airblade/vim-gitgutter'
+
+" GIT
+Plugin 'tpope/vim-fugitive'
+
+" Ruby
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rake'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-cucumber'
+Plugin 'tpope/vim-bundler'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'ngmy/vim-rubocop'
+
+" Elixir
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'tpope/vim-fireplace'
 Plugin 'avdgaag/vim-phoenix'
 
 if has('nvim')
