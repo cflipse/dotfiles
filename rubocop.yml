@@ -1,0 +1,22 @@
+AllCops:
+  TargetRubyVersion: 2.2
+#  DisabledByDefault: true
+
+Style/AccessModifierIndentation:
+  Enabled: true
+  EnforcedStyle: outdent
+
+Style/AlignHash:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+  EnforcedLastArgumentHashStyle: ignore_implicit
+
+Style/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Style/ExtraSpacing:
+  AllowForAlignment: true
+  ForceEqualSignAlignment: true
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
