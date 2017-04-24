@@ -7,68 +7,63 @@ set nocompatible
 set t_Co=256
 
 
-if has("autocmd")
-  filetype indent plugin on
-end
+call plug#begin('~/.vim/plugged')
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#begin()
+Plug 'gmarik/vundle'
+Plug 'kana/vim-textobj-user'
 
-Plugin 'gmarik/vundle'
-Plugin 'kana/vim-textobj-user'
+Plug 'tpope/vim-projectionist'
 
-Plugin 'tpope/vim-projectionist'
+Plug 'tpope/vim-dispatch'
+Plug 'benmills/vimux'
+Plug 'christoomey/vim-tmux-navigator'
 
-Plugin 'tpope/vim-dispatch'
-Plugin 'benmills/vimux'
-Plugin 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-git'
+Plug 'othree/html5.vim'
 
-Plugin 'tpope/vim-git'
-Plugin 'othree/html5.vim'
+Plug 'ag.vim'
+Plug 'ctrlp.vim'
+Plug 'godlygeek/tabular'
+Plug 'gundo'
+Plug 'janko-m/vim-test'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-commentary'
+"Plug 'majutsushi/tagbar'
 
-Plugin 'ag.vim'
-Plugin 'ctrlp.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'gundo'
-Plugin 'janko-m/vim-test'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-commentary'
-"Plugin 'majutsushi/tagbar'
+Plug 'altercation/vim-colors-solarized.git'
+Plug 'Colour-Sampler-Pack'
+Plug 'flazz/vim-colorschemes'
 
-Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'Colour-Sampler-Pack'
-Plugin 'flazz/vim-colorschemes'
-
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
 
 " GIT
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 " Ruby
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-cucumber'
-Plugin 'tpope/vim-bundler'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'ngmy/vim-rubocop'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-cucumber'
+Plug 'tpope/vim-bundler'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'ngmy/vim-rubocop'
 
 " Elixir
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'tpope/vim-fireplace'
-Plugin 'avdgaag/vim-phoenix'
+Plug 'elixir-lang/vim-elixir'
+Plug 'tpope/vim-fireplace'
+Plug 'avdgaag/vim-phoenix'
 
 if has('nvim')
-  Plugin 'w0rp/ale'
-  Plugin 'kassio/neoterm'
+  Plug 'w0rp/ale'
+  Plug 'kassio/neoterm'
 endif
 
-call vundle#end()
+call plug#end()
 
 
 set lcs=tab:>·,trail:· list
