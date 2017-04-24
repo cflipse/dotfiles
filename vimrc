@@ -8,13 +8,11 @@ set t_Co=256
 
 
 call plug#begin('~/.vim/plugged')
-
-Plug 'gmarik/vundle'
 Plug 'kana/vim-textobj-user'
 
 Plug 'tpope/vim-projectionist'
 
-Plug 'tpope/vim-dispatch'
+"Plug 'tpope/vim-dispatch'
 Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -33,7 +31,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 "Plug 'majutsushi/tagbar'
 
-Plug 'altercation/vim-colors-solarized.git'
+Plug 'altercation/vim-colors-solarized'
 Plug 'Colour-Sampler-Pack'
 Plug 'flazz/vim-colorschemes'
 
@@ -45,18 +43,18 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " Ruby
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rake'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-cucumber'
-Plug 'tpope/vim-bundler'
-Plug 'nelstrom/vim-textobj-rubyblock'
-Plug 'ngmy/vim-rubocop'
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'tpope/vim-rake', { 'for': 'ruby' }
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'tpope/vim-cucumber', { 'for': 'ruby' }
+Plug 'tpope/vim-bundler', { 'for': 'ruby' }
+Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
+Plug 'ngmy/vim-rubocop', { 'for': 'ruby'  }
 
 " Elixir
-Plug 'elixir-lang/vim-elixir'
-Plug 'tpope/vim-fireplace'
-Plug 'avdgaag/vim-phoenix'
+Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+Plug 'tpope/vim-fireplace', { 'for': 'elixir' }
+Plug 'avdgaag/vim-phoenix', { 'for': 'elixir' }
 
 if has('nvim')
   Plug 'w0rp/ale'
