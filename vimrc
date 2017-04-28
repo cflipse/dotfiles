@@ -38,6 +38,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 
+Plug 'jeetsukumaran/vim-buffergator'
+
 " GIT
 Plug 'tpope/vim-fugitive'
 
@@ -101,6 +103,7 @@ map <leader>w :!bundle exec cucumber -pwip<cr>
 map <leader>c :!bundle exec cucumber<cr>
 
 map <leader>g :Ag <cword><cr>
+nmap <leader>p :CtrlP<cr>
 
 " highlight last inserted text
 nnoremap gV `[v`]
@@ -111,8 +114,9 @@ let g:neocomplcache_enable_at_startup = 1
 " CtrlP settings
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+let g:ctrlp_working_path_mode = 'r'
+" let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+
 
 
 hi! Normal cterm=NONE term=NONE ctermfg=12 ctermbg=NONE
@@ -124,10 +128,9 @@ let g:ruby_indent_access_modifier_style = 'outdent'
 "let test#strategy = 'dispatch'
 let test#strategy = 'vimux'
 
-"let g:airline_theme='powerlineish'
 let g:airline_powerline_fonts = 1  " use  the powerline fonts
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#fnamemod = ':t'
 
 let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
 let g:airline#extensions#quickfix#location_text = 'Location'
