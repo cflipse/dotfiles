@@ -156,3 +156,5 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.ex,*.exs set filetype=elixir
 
 autocmd Filetype gitcommit setlocal spell textwidth=72
+
+set mouse=nv
