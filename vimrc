@@ -121,18 +121,20 @@ hi! Normal cterm=NONE term=NONE ctermfg=12 ctermbg=NONE
 let g:solarized_termtrans = 1
 let g:ruby_indent_access_modifier_style = 'outdent'
 
-let g:airline_theme='powerlineish'
-let g:airline_powerline_fonts = 1  " use  the powerline fonts
 
 "let test#strategy = 'dispatch'
 let test#strategy = 'vimux'
 
+"let g:airline_theme='powerlineish'
+let g:airline_powerline_fonts = 1  " use  the powerline fonts
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
+let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
+let g:airline#extensions#quickfix#location_text = 'Location'
 
+let g:airline#extensions#hunks#enabled = 1
+let g:airline#extensions#whitespace#enabled = 1
 
 
 " allows cursor change in tmux mode
@@ -143,8 +145,6 @@ else
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
-
-
 
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
