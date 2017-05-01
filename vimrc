@@ -52,8 +52,6 @@ Plug 'tpope/vim-bundler', { 'for': 'ruby' }
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
 Plug 'ngmy/vim-rubocop', { 'for': 'ruby'  }
 
-Plug 'edkolev/tmuxline.vim'
-
 " Elixir
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 Plug 'tpope/vim-fireplace', { 'for': 'elixir' }
