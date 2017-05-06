@@ -11,6 +11,7 @@
 	review = log -p -b
   lg = log --graph --oneline --decorate --date=short --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s'
   unchanged = update-index --assume-unchanged
+	all = "!f() { ls -R -d */.git | sed s,/.git,, | xargs -P10 -I{} git -C {} $1; }; f"
 [user]
 	name = Chris Flipse
 [core]
