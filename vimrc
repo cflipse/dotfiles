@@ -94,6 +94,8 @@ set wildmenu
 
 let g:netrw_banner=0
 
+let g:buffergator_suppress_keymaps=1
+
 map <leader>f :TestNearest<cr>
 map <leader>t :TestFile<cr>
 map <leader>l :TestLast<cr>
@@ -102,8 +104,12 @@ map <leader>n :TestSuite --next-failure<cr>
 map <leader>w :!bundle exec cucumber -pwip<cr>
 map <leader>c :!bundle exec cucumber<cr>
 
-map <leader>g :Ag <cword><cr>
-nmap <leader>p :CtrlP<cr>
+
+map <Leader>b :BuffergatorOpen<CR>
+
+
+map <leader>g :Ag <ucword><cr>
+nmap <leader>p :C_strlP<cr>
 
 " highlight last inserted text
 nnoremap gV `[v`]
