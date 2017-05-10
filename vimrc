@@ -19,8 +19,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-git'
 Plug 'othree/html5.vim'
 
-Plug 'ag.vim'
-Plug 'ctrlp.vim'
+Plug 'mileszs/ack.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'godlygeek/tabular'
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-abolish'
@@ -28,10 +28,8 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
-"Plug 'majutsushi/tagbar'
-
+"Plug 'majutsushi/tagbar' 
 Plug 'altercation/vim-colors-solarized'
-Plug 'Colour-Sampler-Pack'
 Plug 'flazz/vim-colorschemes'
 
 Plug 'vim-airline/vim-airline'
@@ -102,8 +100,10 @@ map <leader>n :TestSuite --next-failure<cr>
 map <leader>w :!bundle exec cucumber -pwip<cr>
 map <leader>c :!bundle exec cucumber<cr>
 
-map <leader>g :Ag <cword><cr>
+map <leader>g :Ack <cword><cr>
 nmap <leader>p :CtrlP<cr>
+
+let g:ackprg = 'ag --vimgrep --smart-case'
 
 " highlight last inserted text
 nnoremap gV `[v`]
