@@ -92,6 +92,8 @@ set wildmenu
 
 let g:netrw_banner=0
 
+let g:buffergator_suppress_keymaps=1
+
 map <leader>f :TestNearest<cr>
 map <leader>t :TestFile<cr>
 map <leader>l :TestLast<cr>
@@ -102,6 +104,7 @@ map <leader>c :!bundle exec cucumber<cr>
 
 map <leader>g :Ack <cword><cr>
 nmap <leader>p :CtrlP<cr>
+map <Leader>b :BuffergatorOpen<CR>
 
 let g:ackprg = 'ag --vimgrep --smart-case'
 
