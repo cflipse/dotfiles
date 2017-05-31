@@ -157,7 +157,7 @@ endif
 
 
 " TmuxNavigator configs
-let g:tmux_navigator_no_mappings = 1
+" let g:tmux_navigator_no_mappings = 1
 
 nnoremap <silent> <ctrl>h :TmuxNavigateLeft<cr>
 nnoremap <silent> <ctrl>j :TmuxNavigateDown<cr>
