@@ -56,7 +56,6 @@ Plug 'tpope/vim-fireplace', { 'for': 'elixir' }
 Plug 'avdgaag/vim-phoenix', { 'for': 'elixir' }
 
 if has('nvim')
-  Plug 'w0rp/ale'
   Plug 'kassio/neoterm'
 endif
 
