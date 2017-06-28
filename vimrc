@@ -140,6 +140,10 @@ let g:airline#extensions#quickfix#location_text = 'Location'
 let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
 
+if has('nvim')
+  let test#strategy = 'neoterm'
+endif
+
 
 " allows cursor change in tmux mode
 if exists('$TMUX')
@@ -163,6 +167,13 @@ nnoremap <silent> <ctrl>j :TmuxNavigateDown<cr>
 nnoremap <silent> <ctrl>k :TmuxNavigateUp<cr>
 nnoremap <silent> <ctrl>l :TmuxNavigateRight<cr>
 nnoremap <silent> <ctrl>- :TmuxNavigatePrevious<cr>
+
+tnoremap <silent> <ctrl>h :TmuxNavigateLeft<cr>
+tnoremap <silent> <ctrl>j :TmuxNavigateDown<cr>
+tnoremap <silent> <ctrl>k :TmuxNavigateUp<cr>
+tnoremap <silent> <ctrl>l :TmuxNavigateRight<cr>
+tnoremap <silent> <ctrl>- :TmuxNavigatePrevious<cr>
+
 
 
 syntax on
