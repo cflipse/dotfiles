@@ -142,6 +142,9 @@ let g:airline#extensions#whitespace#enabled = 1
 
 if has('nvim')
   let test#strategy = 'neoterm'
+
+  " leave terminal mode with escape
+  tnoremap <Esc> <C-\><C-n>
 endif
 
 
