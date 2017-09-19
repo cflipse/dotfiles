@@ -188,3 +188,8 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 autocmd FileType qf setlocal norelativenumber colorcolumn&
 
 set mouse=nv
+
+" When mouse highlighting, copy to xsel buffer
+vmap <LeftRelease> "*ygv
+" Copy unidentified buffers to system clipboard
+set clipboard+=unnamedplus
