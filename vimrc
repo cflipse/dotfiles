@@ -171,11 +171,13 @@ nnoremap <silent> <ctrl>k :TmuxNavigateUp<cr>
 nnoremap <silent> <ctrl>l :TmuxNavigateRight<cr>
 nnoremap <silent> <ctrl>- :TmuxNavigatePrevious<cr>
 
-tnoremap <silent> <ctrl>h :TmuxNavigateLeft<cr>
-tnoremap <silent> <ctrl>j :TmuxNavigateDown<cr>
-tnoremap <silent> <ctrl>k :TmuxNavigateUp<cr>
-tnoremap <silent> <ctrl>l :TmuxNavigateRight<cr>
-tnoremap <silent> <ctrl>- :TmuxNavigatePrevious<cr>
+if has("nvim")
+  tnoremap <silent> <ctrl>h :TmuxNavigateLeft<cr>
+  tnoremap <silent> <ctrl>j :TmuxNavigateDown<cr>
+  tnoremap <silent> <ctrl>k :TmuxNavigateUp<cr>
+  tnoremap <silent> <ctrl>l :TmuxNavigateRight<cr>
+  tnoremap <silent> <ctrl>- :TmuxNavigatePrevious<cr>
+endif
 
 
 
