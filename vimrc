@@ -39,7 +39,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'jeetsukumaran/vim-buffergator'
 
 
-Plug 'w0rp/Ale'
+" Plug 'w0rp/Ale'
 
 " GIT
 Plug 'tpope/vim-fugitive'
@@ -91,7 +91,6 @@ set lazyredraw
 set path+=**
 set wildmenu
 
-
 let g:netrw_banner=0
 
 let g:buffergator_suppress_keymaps=1
@@ -141,7 +140,7 @@ let g:airline#extensions#quickfix#location_text = 'Location'
 
 let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
-let g:airline#extensions#ale#enabled = 1
+" let g:airline#extensions#ale#enabled = 1
 
 if has('nvim')
   let test#strategy = 'neoterm'
@@ -149,7 +148,6 @@ if has('nvim')
   " leave terminal mode with escape
   tnoremap <Esc> <C-\><C-n>
 endif
-
 
 " allows cursor change in tmux mode
 if exists('$TMUX')
