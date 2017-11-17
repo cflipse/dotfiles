@@ -12,7 +12,7 @@ Plug 'kana/vim-textobj-user'
 
 Plug 'tpope/vim-projectionist'
 
-"Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-dispatch'
 Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -37,6 +37,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'jeetsukumaran/vim-buffergator'
+
+
+Plug 'w0rp/Ale'
 
 " GIT
 Plug 'tpope/vim-fugitive'
@@ -126,9 +129,8 @@ hi! Normal cterm=NONE term=NONE ctermfg=12 ctermbg=NONE
 let g:solarized_termtrans = 1
 let g:ruby_indent_access_modifier_style = 'outdent'
 
-
-"let test#strategy = 'dispatch'
-let test#strategy = 'vimux'
+let test#strategy = 'dispatch'
+"let test#strategy = 'vimux'
 
 let g:airline_powerline_fonts = 1  " use  the powerline fonts
 " let g:airline#extensions#tabline#enabled = 1
@@ -139,6 +141,7 @@ let g:airline#extensions#quickfix#location_text = 'Location'
 
 let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 
 if has('nvim')
   let test#strategy = 'neoterm'
