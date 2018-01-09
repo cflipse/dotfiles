@@ -37,6 +37,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'jeetsukumaran/vim-buffergator'
+Plug 'tpope/vim-bundler'
 
 
 " Plug 'w0rp/Ale'
@@ -49,7 +50,6 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-rake', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-cucumber', { 'for': 'ruby' }
-Plug 'tpope/vim-bundler', { 'for': 'ruby' }
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
 Plug 'ngmy/vim-rubocop', { 'for': 'ruby'  }
 
