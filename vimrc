@@ -65,7 +65,7 @@ endif
 call plug#end()
 
 
-set lcs=tab:>·,trail:· list
+set lcs=tab:»\ ,trail:· list
 
 set foldmethod=indent
 set foldlevelstart=10
