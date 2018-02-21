@@ -36,7 +36,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 
-Plug 'jeetsukumaran/vim-buffergator'
+"Plug 'jeetsukumaran/vim-buffergator'
 Plug 'tpope/vim-bundler'
 
 Plug 'fatih/vim-go', { 'for': 'go' }
@@ -62,6 +62,9 @@ Plug 'avdgaag/vim-phoenix', { 'for': 'elixir' }
 if has('nvim')
   Plug 'kassio/neoterm'
 endif
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -96,17 +99,19 @@ let g:netrw_banner=0
 
 let g:buffergator_suppress_keymaps=1
 
-map <leader>f :TestNearest<cr>
+" map <leader>f :TestNearest<cr>
 map <leader>t :TestFile<cr>
-map <leader>l :TestLast<cr>
+" map <leader>l :TestLast<cr>
 map <leader>T :TestSuite<cr>
 map <leader>n :TestSuite --next-failure<cr>
-map <leader>w :!bundle exec cucumber -pwip<cr>
-map <leader>c :!bundle exec cucumber<cr>
+map <leader>N :TestSuite --only-failure<cr>
+" map <leader>w :!bundle exec cucumber -pwip<cr>
+" map <leader>c :!bundle exec cucumber<cr>
+noremap <leader>f :Files<cr>
 
 map <leader>g :Ack <cword><cr>
-nmap <leader>p :CtrlP<cr>
-map <Leader>b :BuffergatorOpen<CR>
+" nmap <leader>p :CtrlP<cr>
+" map <Leader>b :BuffergatorOpen<CR>
 
 let g:ackprg = 'ag --vimgrep --smart-case'
 
@@ -120,7 +125,7 @@ let g:neocomplcache_enable_at_startup = 1
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 'r'
-" let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 
 
