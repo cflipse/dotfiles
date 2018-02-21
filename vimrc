@@ -39,6 +39,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'tpope/vim-bundler'
 
+Plug 'fatih/vim-go', { 'for': 'go' }
 
 " Plug 'w0rp/Ale'
 
