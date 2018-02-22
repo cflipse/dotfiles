@@ -35,6 +35,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-rooter'
 
 "Plug 'jeetsukumaran/vim-buffergator'
 Plug 'tpope/vim-bundler'
@@ -114,7 +115,7 @@ endfunction
 
 command! ProjectFiles execute 'Files' s:find_git_root()
 
-noremap <leader>f :ProjectFiles<cr>
+noremap <leader>f :Files<cr>
 
 map <leader>g :Ack <cword><cr>
 " nmap <leader>p :CtrlP<cr>
