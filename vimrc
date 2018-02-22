@@ -107,7 +107,14 @@ map <leader>n :TestSuite --next-failure<cr>
 map <leader>N :TestSuite --only-failure<cr>
 " map <leader>w :!bundle exec cucumber -pwip<cr>
 " map <leader>c :!bundle exec cucumber<cr>
-noremap <leader>f :Files<cr>
+
+function! s:find_git_root()
+  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+
+command! ProjectFiles execute 'Files' s:find_git_root()
+
+noremap <leader>f :ProjectFiles<cr>
 
 map <leader>g :Ack <cword><cr>
 " nmap <leader>p :CtrlP<cr>
@@ -202,3 +209,5 @@ set mouse=nv
 vmap <LeftRelease> "*ygv
 " Copy unidentified buffers to system clipboard
 set clipboard+=unnamedplus
+
+
