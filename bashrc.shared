@@ -1,0 +1,8 @@
+
+export EDITOR=vim
+
+# show current index state
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWCOLORHINTS=true
+export PROMPT_COMMAND='__git_ps1 "${debian_chroot:+($debian_chroot)}\[\033[0;36m\]\u@\h\[\033[33m\]:\[\033[1;34m\]\w\[\033[m\]" "\\\$ "'
+
