@@ -13,6 +13,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'tpope/vim-projectionist'
 
 Plug 'tpope/vim-dispatch'
+Plug 'radenling/vim-dispatch-neovim'
 Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -143,7 +144,6 @@ let g:solarized_termtrans = 1
 let g:ruby_indent_access_modifier_style = 'outdent'
 
 let test#strategy = 'dispatch'
-"let test#strategy = 'vimux'
 
 let g:airline_powerline_fonts = 1  " use  the powerline fonts
 " let g:airline#extensions#tabline#enabled = 1
