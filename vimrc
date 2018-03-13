@@ -101,12 +101,14 @@ let g:netrw_banner=0
 
 let g:buffergator_suppress_keymaps=1
 
-" map <leader>f :TestNearest<cr>
-map <leader>t :TestFile<cr>
-" map <leader>l :TestLast<cr>
-map <leader>T :TestSuite<cr>
-map <leader>n :TestSuite --next-failure<cr>
-map <leader>N :TestSuite --only-failure<cr>
+let test#strategy = 'dispatch'
+
+map <leader>s :TestFile<cr>
+map <leader>S :TestSuite<cr>
+map <leader>n :TestNearest<cr>
+map <leader>N :TestLast<cr>
+map <leader>f :TestSuite --next-failure<cr>
+map <leader>F :TestSuite --only-failure<cr>
 " map <leader>w :!bundle exec cucumber -pwip<cr>
 " map <leader>c :!bundle exec cucumber<cr>
 
@@ -116,7 +118,8 @@ endfunction
 
 command! ProjectFiles execute 'Files' s:find_git_root()
 
-noremap <leader>f :Files<cr>
+" keep consistent with fzf
+noremap <leader>t :Files<cr>
 
 map <leader>g :Ack <cword><cr>
 " nmap <leader>p :CtrlP<cr>
@@ -137,13 +140,11 @@ let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 
-
 hi! Normal cterm=NONE term=NONE ctermfg=12 ctermbg=NONE
 
 let g:solarized_termtrans = 1
 let g:ruby_indent_access_modifier_style = 'outdent'
 
-let test#strategy = 'dispatch'
 
 let g:airline_powerline_fonts = 1  " use  the powerline fonts
 " let g:airline#extensions#tabline#enabled = 1
@@ -154,10 +155,10 @@ let g:airline#extensions#quickfix#location_text = 'Location'
 
 let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
-" let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 
 if has('nvim')
-  let test#strategy = 'neoterm'
+  " let test#strategy = 'neoterm'
 
   " leave terminal mode with escape
   tnoremap <Esc> <C-\><C-n>
@@ -194,8 +195,6 @@ if has("nvim")
   tnoremap <silent> <ctrl>- :TmuxNavigatePrevious<cr>
 endif
 
-
-
 syntax on
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -210,5 +209,3 @@ set mouse=nv
 vmap <LeftRelease> "*ygv
 " Copy unidentified buffers to system clipboard
 set clipboard+=unnamedplus
-
-
