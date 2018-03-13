@@ -49,7 +49,7 @@ Plug 'w0rp/Ale'
 Plug 'tpope/vim-fugitive'
 
 " Ruby
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rake', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-cucumber', { 'for': 'ruby' }
