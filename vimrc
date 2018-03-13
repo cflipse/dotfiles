@@ -43,7 +43,7 @@ Plug 'tpope/vim-bundler'
 
 Plug 'fatih/vim-go', { 'for': 'go' }
 
-" Plug 'w0rp/Ale'
+Plug 'w0rp/Ale'
 
 " GIT
 Plug 'tpope/vim-fugitive'
