@@ -213,3 +213,5 @@ set mouse=nv
 vmap <LeftRelease> "*ygv
 " Copy unidentified buffers to system clipboard
 set clipboard+=unnamedplus
+
+autocmd BufNewFile,BufRead .envrc set syntax=sh
