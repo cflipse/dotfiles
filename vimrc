@@ -177,7 +177,8 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
-let g:ale_sign_error = "◉"
+" let g:ale_sign_error = "◉"
+let g:ale_sign_error = "◊"
 let g:ale_sign_warning = "•"
 hi link ALEErrorSign    Error
 hi link ALEWarningSign  Warning
