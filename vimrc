@@ -15,7 +15,7 @@ Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'benmills/vimux'
-Plug 'christoomey/vim-tmux-navigator'
+" Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'tpope/vim-git'
 Plug 'othree/html5.vim'
@@ -185,19 +185,19 @@ hi link ALEWarningSign  Warning
 " TmuxNavigator configs
 " let g:tmux_navigator_no_mappings = 1
 
-nnoremap <silent> <ctrl>h :TmuxNavigateLeft<cr>
-nnoremap <silent> <ctrl>j :TmuxNavigateDown<cr>
-nnoremap <silent> <ctrl>k :TmuxNavigateUp<cr>
-nnoremap <silent> <ctrl>l :TmuxNavigateRight<cr>
-nnoremap <silent> <ctrl>- :TmuxNavigatePrevious<cr>
+" nnoremap <silent> <ctrl>h :TmuxNavigateLeft<cr>
+" nnoremap <silent> <ctrl>j :TmuxNavigateDown<cr>
+" nnoremap <silent> <ctrl>k :TmuxNavigateUp<cr>
+" nnoremap <silent> <ctrl>l :TmuxNavigateRight<cr>
+" nnoremap <silent> <ctrl>- :TmuxNavigatePrevious<cr>
 
-if has("nvim")
-  tnoremap <silent> <ctrl>h :TmuxNavigateLeft<cr>
-  tnoremap <silent> <ctrl>j :TmuxNavigateDown<cr>
-  tnoremap <silent> <ctrl>k :TmuxNavigateUp<cr>
-  tnoremap <silent> <ctrl>l :TmuxNavigateRight<cr>
-  tnoremap <silent> <ctrl>- :TmuxNavigatePrevious<cr>
-endif
+" if has("nvim")
+"   tnoremap <silent> <ctrl>h :TmuxNavigateLeft<cr>
+"   tnoremap <silent> <ctrl>j :TmuxNavigateDown<cr>
+"   tnoremap <silent> <ctrl>k :TmuxNavigateUp<cr>
+"   tnoremap <silent> <ctrl>l :TmuxNavigateRight<cr>
+"   tnoremap <silent> <ctrl>- :TmuxNavigatePrevious<cr>
+" endif
 
 syntax on
 
@@ -207,7 +207,8 @@ autocmd BufNewFile,BufReadPost *.ex,*.exs set filetype=elixir
 autocmd Filetype gitcommit setlocal spell textwidth=72
 autocmd FileType qf setlocal norelativenumber colorcolumn&
 
-set mouse=nv
+
+set mouse=a
 
 " When mouse highlighting, copy to xsel buffer
 vmap <LeftRelease> "*ygv
