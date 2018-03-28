@@ -83,7 +83,7 @@ set et sw=2 ts=2 ai
 set ruler
 set laststatus=2
 
-set relativenumber
+" set relativenumber
 set number
 set colorcolumn=80
 set autoread
