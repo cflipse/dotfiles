@@ -2,19 +2,19 @@ AllCops:
   TargetRubyVersion: 2.2
 #  DisabledByDefault: true
 
-Style/AccessModifierIndentation:
+Layout/AccessModifierIndentation:
   Enabled: true
   EnforcedStyle: outdent
 
-Style/AlignHash:
+Layout/AlignHash:
   EnforcedHashRocketStyle: table
   EnforcedColonStyle: table
   EnforcedLastArgumentHashStyle: ignore_implicit
 
-Style/AlignParameters:
+Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 
-Style/ExtraSpacing:
+Layout/ExtraSpacing:
   AllowForAlignment: true
   ForceEqualSignAlignment: true
 
