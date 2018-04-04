@@ -61,6 +61,9 @@ Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 Plug 'tpope/vim-fireplace', { 'for': 'elixir' }
 Plug 'avdgaag/vim-phoenix', { 'for': 'elixir' }
 
+" JS
+Plug 'joukevandermaas/vim-ember-hbs'
+
 if has('nvim')
   Plug 'kassio/neoterm'
 endif
