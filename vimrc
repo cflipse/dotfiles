@@ -149,6 +149,7 @@ let g:solarized_termtrans = 1
 let g:ruby_indent_access_modifier_style = 'outdent'
 
 
+let g:go_fmt_command = "goimports"
 let g:airline_powerline_fonts = 1  " use  the powerline fonts
 " let g:airline#extensions#tabline#enabled = 1
 " let g:airline#extensions#tabline#fnamemod = ':t'
@@ -159,6 +160,9 @@ let g:airline#extensions#quickfix#location_text = 'Location'
 let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#ale#enabled = 1
+
+
+
 
 if has('nvim')
   " let test#strategy = 'neoterm'
