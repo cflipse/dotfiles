@@ -189,6 +189,11 @@ let g:ale_sign_error = "◊"
 let g:ale_sign_warning = "•"
 hi link ALEErrorSign    Error
 hi link ALEWarningSign  Warning
+let g:ale_fix_on_save = 1
+
+let g:ale_fixers = {
+      \  'ruby': ['rubocop']
+      \ }
 
 " TmuxNavigator configs
 " let g:tmux_navigator_no_mappings = 1
