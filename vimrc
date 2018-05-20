@@ -13,8 +13,8 @@ Plug 'kana/vim-textobj-user'
 Plug 'tpope/vim-projectionist'
 
 Plug 'tpope/vim-dispatch'
-Plug 'radenling/vim-dispatch-neovim'
-Plug 'benmills/vimux'
+" Plug 'radenling/vim-dispatch-neovim'
+" Plug 'benmills/vimux'
 " Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'tpope/vim-git'
@@ -105,7 +105,6 @@ let g:netrw_banner=0
 let g:buffergator_suppress_keymaps=1
 
 let test#strategy = 'dispatch'
-
 map <leader>s :TestFile<cr>
 map <leader>S :TestSuite<cr>
 map <leader>n :TestNearest<cr>
