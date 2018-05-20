@@ -13,11 +13,10 @@ Plug 'kana/vim-textobj-user'
 Plug 'tpope/vim-projectionist'
 
 Plug 'tpope/vim-dispatch'
-" Plug 'radenling/vim-dispatch-neovim'
 " Plug 'benmills/vimux'
+" Plug 'radenling/vim-dispatch-neovim'
 " Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'tpope/vim-git'
 Plug 'othree/html5.vim'
 
 Plug 'mileszs/ack.vim'
@@ -41,11 +40,10 @@ Plug 'airblade/vim-rooter'
 "Plug 'jeetsukumaran/vim-buffergator'
 Plug 'tpope/vim-bundler'
 
-Plug 'fatih/vim-go', { 'for': 'go' }
-
 Plug 'w0rp/Ale'
 
 " GIT
+Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 
 " Ruby
@@ -63,6 +61,9 @@ Plug 'avdgaag/vim-phoenix', { 'for': 'elixir' }
 
 " JS
 Plug 'joukevandermaas/vim-ember-hbs'
+
+" GOlang
+Plug 'fatih/vim-go', { 'for': 'go' }
 
 if has('nvim')
   Plug 'kassio/neoterm'
