@@ -20,7 +20,6 @@ Plug 'tpope/vim-dispatch'
 Plug 'othree/html5.vim'
 
 Plug 'mileszs/ack.vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'godlygeek/tabular'
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-abolish'
@@ -135,13 +134,6 @@ nnoremap gV `[v`]
 
 let g:neocomplcache_enable_cursor_hold_i=1
 let g:neocomplcache_enable_at_startup = 1
-
-" CtrlP settings
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_working_path_mode = 'r'
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-
 
 hi! Normal cterm=NONE term=NONE ctermfg=12 ctermbg=NONE
 
