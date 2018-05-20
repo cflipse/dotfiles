@@ -226,8 +226,8 @@ autocmd FileType qf setlocal norelativenumber colorcolumn&
 set mouse=a
 
 " When mouse highlighting, copy to xsel buffer
-vmap <LeftRelease> "*ygv
+" vmap <LeftRelease> "*ygv
 " Copy unidentified buffers to system clipboard
-set clipboard+=unnamedplus
+set clipboard=autoselect,unnamedplus,unnamed,exclude:cons\|linux
 
 autocmd BufNewFile,BufRead .envrc set syntax=sh
