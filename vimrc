@@ -13,15 +13,13 @@ Plug 'kana/vim-textobj-user'
 Plug 'tpope/vim-projectionist'
 
 Plug 'tpope/vim-dispatch'
-Plug 'radenling/vim-dispatch-neovim'
-Plug 'benmills/vimux'
+" Plug 'benmills/vimux'
+" Plug 'radenling/vim-dispatch-neovim'
 " Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'tpope/vim-git'
 Plug 'othree/html5.vim'
 
 Plug 'mileszs/ack.vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'godlygeek/tabular'
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-abolish'
@@ -43,11 +41,10 @@ Plug 'airblade/vim-rooter'
 "Plug 'jeetsukumaran/vim-buffergator'
 Plug 'tpope/vim-bundler'
 
-Plug 'fatih/vim-go', { 'for': 'go' }
-
 Plug 'w0rp/Ale'
 
 " GIT
+Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 
 " Ruby
@@ -65,6 +62,9 @@ Plug 'avdgaag/vim-phoenix', { 'for': 'elixir' }
 
 " JS
 Plug 'joukevandermaas/vim-ember-hbs'
+
+" GOlang
+Plug 'fatih/vim-go', { 'for': 'go' }
 
 if has('nvim')
   Plug 'kassio/neoterm'
@@ -107,7 +107,6 @@ let g:netrw_banner=0
 let g:buffergator_suppress_keymaps=1
 
 let test#strategy = 'dispatch'
-
 map <leader>s :TestFile<cr>
 map <leader>S :TestSuite<cr>
 map <leader>n :TestNearest<cr>
@@ -137,13 +136,6 @@ nnoremap gV `[v`]
 
 let g:neocomplcache_enable_cursor_hold_i=1
 let g:neocomplcache_enable_at_startup = 1
-
-" CtrlP settings
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_working_path_mode = 'r'
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-
 
 hi! Normal cterm=NONE term=NONE ctermfg=12 ctermbg=NONE
 
@@ -191,7 +183,9 @@ let g:ale_sign_error = "◊"
 let g:ale_sign_warning = "•"
 hi link ALEErrorSign    Error
 hi link ALEWarningSign  Warning
-let g:ale_fix_on_save = 1
+" let g:ale_fix_on_save = 1
+
+map <leader>a :ALEFix<cr>
 
 let g:ale_fixers = {
       \  'ruby': ['rubocop']
@@ -226,8 +220,8 @@ autocmd FileType qf setlocal norelativenumber colorcolumn&
 set mouse=a
 
 " When mouse highlighting, copy to xsel buffer
-vmap <LeftRelease> "*ygv
+" vmap <LeftRelease> "*ygv
 " Copy unidentified buffers to system clipboard
-set clipboard+=unnamedplus
+set clipboard=autoselect,unnamedplus,unnamed,exclude:cons\|linux
 
 autocmd BufNewFile,BufRead .envrc set syntax=sh
