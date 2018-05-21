@@ -222,6 +222,11 @@ set mouse=a
 " When mouse highlighting, copy to xsel buffer
 " vmap <LeftRelease> "*ygv
 " Copy unidentified buffers to system clipboard
-set clipboard=autoselect,unnamedplus,unnamed,exclude:cons\|linux
+
+if has("nvim")
+  set clipboard=unnamedplus,unnamed
+elseif
+  set clipboard=autoselect,unnamedplus,unnamed,exclude:cons\|linux
+endif
 
 autocmd BufNewFile,BufRead .envrc set syntax=sh
