@@ -183,7 +183,7 @@ let g:ale_sign_error = "◊"
 let g:ale_sign_warning = "•"
 hi link ALEErrorSign    Error
 hi link ALEWarningSign  Warning
-" let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 1
 
 map <leader>a :ALEFix<cr>
 
@@ -225,7 +225,7 @@ set mouse=a
 
 if has("nvim")
   set clipboard=unnamedplus,unnamed
-elseif
+else
   set clipboard=autoselect,unnamedplus,unnamed,exclude:cons\|linux
 endif
 
