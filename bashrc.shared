@@ -1,3 +1,5 @@
+[[ ":$PATH:" != *":${HOME}/bin:"* ]] && PATH=${HOME}/bin:${PATH}
+export PATH
 
 export EDITOR=vim
 
