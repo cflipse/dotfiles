@@ -17,6 +17,7 @@
 	email = cflipse@gmail.com
 [core]
 	editor = vim
+	excludesfile = /home/flip/.gitignore
 [rerere]
 	enabled = 1
 [rebase]

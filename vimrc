@@ -154,9 +154,6 @@ let g:airline#extensions#quickfix#location_text = 'Location'
 let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
 
-
-
-
 if has('nvim')
   " let test#strategy = 'neoterm'
 
@@ -194,7 +191,6 @@ else
   let g:ale_echo_cursor = 0
 endif
 
-
 map <leader>a :ALEFix<cr>
 
 let g:ale_fixers = {
@@ -225,7 +221,6 @@ autocmd BufNewFile,BufReadPost *.ex,*.exs set filetype=elixir
 
 autocmd Filetype gitcommit setlocal spell textwidth=72
 autocmd FileType qf setlocal norelativenumber colorcolumn&
-
 
 set mouse=a
 
