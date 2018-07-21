@@ -122,6 +122,8 @@ endfunction
 
 command! ProjectFiles execute 'Files' s:find_git_root()
 
+let g:rooter_patterns = ['Rakefile', 'Gemfile', '.git/']
+
 " keep consistent with fzf
 noremap <leader>t :Files<cr>
 
