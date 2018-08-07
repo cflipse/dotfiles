@@ -12,6 +12,7 @@
   lg = log --graph --oneline --decorate --date=short --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s'
   unchanged = update-index --assume-unchanged
 	all = "!f() { ls -R -d */.git | sed s,/.git,, | xargs -P10 -I{} git -C {} $1; }; f"
+	ctags = !.git/hooks/ctags
 [user]
 	name = Chris Flipse
 	email = cflipse@gmail.com
@@ -29,3 +30,5 @@
 
 [includeIf "gitdir:~/groupon/"]
   path = ~/groupon/.gitconfig
+[init]
+	templatedir = ~/.git_template
