@@ -181,18 +181,11 @@ let g:ale_sign_warning = "•"
 hi link ALEErrorSign    Error
 hi link ALEWarningSign  Warning
 let g:ale_fix_on_save = 1
+let g:ale_echo_cursor = 1
 let g:ale_completion_enabled = 1
 let g:ale_sign_column_always = 1
 
 let g:airline#extensions#ale#enabled = 1
-
-if has('nvim')
-  let g:ale_echo_cursor = 1
-else
-  " There is a vim bug that causes the cursor to disappear in on ale-marked
-  " lines  -  https://github.com/w0rp/ale/issues/1334 
-  let g:ale_echo_cursor = 0
-endif
 
 map <leader>a :ALEFix<cr>
 
