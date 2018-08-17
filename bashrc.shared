@@ -3,6 +3,9 @@ export PATH
 
 export EDITOR=vim
 
+# Convice libreadline based tools to give me vi things
+set editing-mode vi
+
 # show current index state
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWCOLORHINTS=true
