@@ -23,6 +23,7 @@ Plug 'othree/html5.vim'
 
 Plug 'mileszs/ack.vim'
 Plug 'godlygeek/tabular'
+Plug 'junegunn/vim-easy-align'
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-endwise'
