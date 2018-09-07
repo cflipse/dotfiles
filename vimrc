@@ -12,6 +12,8 @@ Plug 'kana/vim-textobj-user'
 
 Plug 'tpope/vim-projectionist'
 
+Plug 'direnv/direnv.vim'
+
 Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'benmills/vimux'

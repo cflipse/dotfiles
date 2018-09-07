@@ -1,0 +1,18 @@
+source /usr/src/chruby/share/chruby/chruby.sh
+
+use_ruby() {
+  local ver=$1
+
+  if [[ -z $ver ]] && [[ -f .ruby-version ]]; then
+    ver = $(cat .ruby-version)
+  fi
+
+  if [[ -z $ver ]]; then
+    echo Unknown ruby version
+    exit 1
+  fi
+
+  chruby $ver
+
+  layout ruby
+}
