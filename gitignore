@@ -2,5 +2,6 @@
 .envrc
 .*~
 .byebug_history
+.direnv
 
 config/secrets.yml
