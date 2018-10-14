@@ -4,7 +4,7 @@
 	ui = auto
 [alias]
 	st = status -s
-	ci = commit
+	ci = commit -v
 	co = checkout
 	track = branch --track
 	amend = commit --amend
