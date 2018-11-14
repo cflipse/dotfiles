@@ -11,7 +11,7 @@
 	review = log -p -b
 	lg = log --graph --oneline --decorate --date=short --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s'
 	unchanged = update-index --assume-unchanged
-	each = "!f() { ls -R -d */.git | sed s,/.git,, | xargs -P10 -I{} git -C {} $1; }; f"
+	each = "!f() { find . -name .git -type d | sed s,/.git,, | xargs -P10 -I{} git -C {} $1; }; f"
 	ctags = !.git/hooks/ctags
 	copr = "!f() { git fetch -fu origin refs/pull/$1/head:pr-$1; git checkout pr-$1; } ; f"
 	prunepr = "!git for-each-ref refs/heads/pr-* --format='%(refname:short)' | while read ref ; do git branch -D $ref ; done"
