@@ -1,4 +1,9 @@
 [[ ":$PATH:" != *":${HOME}/bin:"* ]] && PATH=${HOME}/bin:${PATH}
+
+if [ -f /usr/lib/chromium-browser/chromedriver ]; then
+  PATH=${PATH}:/usr/lib/chromium-browser
+fi
+
 export PATH
 
 export EDITOR=vim
