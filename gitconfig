@@ -4,7 +4,7 @@
 	ui = auto
 [alias]
 	st = status -s
-	ci = commit -v
+	ci = commit
 	co = checkout
 	track = branch --track
 	amend = commit --amend
@@ -38,3 +38,5 @@
 	templatedir = ~/.git_template
 [credential]
 	helper = cache
+[commit]
+	verbose = true
