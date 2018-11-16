@@ -16,6 +16,7 @@
 	copr = "!f() { git fetch -fu origin refs/pull/$1/head:pr-$1; git checkout pr-$1; } ; f"
 	prunepr = "!git for-each-ref refs/heads/pr-* --format='%(refname:short)' | while read ref ; do git branch -D $ref ; done"
 	cp = cherry-pick --ff
+	ff = merge --ff-only
 [user]
 	name = Chris Flipse
 	email = cflipse@gmail.com
