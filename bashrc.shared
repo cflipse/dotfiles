@@ -12,9 +12,19 @@ export EDITOR=vim
 set editing-mode vi
 
 # show current index state
+cyan=$(tput setaf 6)
+red=$(tput setaf 1)
+blue=$(tput setaf 4)
+reset=$(tput sgr0)
+bold=$(tput bold)
+dim=$(tput dim)
+
+PROMPT_HOST="\[$cyan\]\u@\h\[$reset\]"
+PROMPT_DIR="\[$blue$bold\]\w\[$reset\]"
+
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWCOLORHINTS=true
-export PROMPT_COMMAND='__git_ps1 "${debian_chroot:+($debian_chroot)}\[\033[0;36m\]\u@\h\[\033[33m\]:\[\033[1;34m\]\w\[\033[m\]" "\\\$ "'
+export PROMPT_COMMAND='__git_ps1 "${PROMPT_HOST}:${PROMPT_DIR}" "\n\[$dim\]\! \[$red\]\j\]\[$reset\] \\\$ "'
 
 # Avoid duplicates
 export HISTCONTROL=ignoredups:erasedups
