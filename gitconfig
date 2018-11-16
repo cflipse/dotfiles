@@ -31,9 +31,6 @@
 	default = simple
 [include]
 	path = .gitconfig.local
-
-[includeIf "gitdir:~/groupon/"]
-	path = ~/groupon/.gitconfig
 [init]
 	templatedir = ~/.git_template
 [credential]
