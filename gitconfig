@@ -40,3 +40,5 @@
 	helper = cache
 [commit]
 	verbose = true
+[pull]
+	ff = only
