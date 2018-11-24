@@ -5,3 +5,5 @@
 .direnv
 
 config/secrets.yml
+
+.lvimrc

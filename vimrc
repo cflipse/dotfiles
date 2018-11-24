@@ -45,6 +45,7 @@ Plug 'airblade/vim-rooter'
 Plug 'tpope/vim-bundler'
 
 Plug 'w0rp/Ale'
+Plug 'embear/vim-localvimrc'
 
 " GIT
 Plug 'tpope/vim-git'
