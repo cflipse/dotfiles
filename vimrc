@@ -146,8 +146,6 @@ let g:neocomplcache_enable_at_startup = 1
 hi! Normal cterm=NONE term=NONE ctermfg=12 ctermbg=NONE
 
 let g:solarized_termtrans = 1
-let g:ruby_indent_access_modifier_style = 'outdent'
-
 
 let g:go_fmt_command = "goimports"
 let g:airline_powerline_fonts = 1  " use  the powerline fonts
@@ -184,6 +182,8 @@ let g:ale_fix_on_save = 1
 let g:ale_echo_cursor = 1
 let g:ale_completion_enabled = 1
 let g:ale_sign_column_always = 1
+let g:ale_ruby_rubocop_executable='bundle'
+let g:ale_ruby_standardrb_executable='bundle'
 
 let g:airline#extensions#ale#enabled = 1
 
