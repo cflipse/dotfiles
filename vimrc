@@ -57,7 +57,7 @@ Plug 'tpope/vim-rake', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-cucumber', { 'for': 'ruby' }
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
-Plug 'ngmy/vim-rubocop', { 'for': 'ruby'  }
+" Plug 'ngmy/vim-rubocop', { 'for': 'ruby'  }
 
 " Elixir
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
@@ -189,9 +189,7 @@ let g:airline#extensions#ale#enabled = 1
 
 map <leader>a :ALEFix<cr>
 
-let g:ale_fixers = {
-      \  'ruby': ['rubocop']
-      \ }
+" let g:ale_fixers = { 'ruby': ['rubocop'] }
 
 " TmuxNavigator configs
 " let g:tmux_navigator_no_mappings = 1
