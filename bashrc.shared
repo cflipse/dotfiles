@@ -24,7 +24,7 @@ PROMPT_DIR="\[$blue$bold\]\w\[$reset\]"
 
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWCOLORHINTS=true
-export PROMPT_COMMAND='__git_ps1 "${PROMPT_HOST}:${PROMPT_DIR}" "\n\[$dim\]\! \[$red\]\j\[$reset\] \\\$ "'
+export PROMPT_COMMAND='__git_ps1 "${PROMPT_HOST}:${PROMPT_DIR}" "\n\[$red\]\j\[$reset\] \\\$ "'
 
 # Avoid duplicates
 export HISTCONTROL=ignoredups:erasedups
