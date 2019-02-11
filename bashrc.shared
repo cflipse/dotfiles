@@ -86,3 +86,7 @@ tmate-unpair() {
     echo "Session already killed"
   fi
 }
+
+set-text-zoom() {
+  gsettings set org.gnome.desktop.interface text-scaling-factor "$1";
+}
