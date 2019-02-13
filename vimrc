@@ -114,12 +114,12 @@ let g:netrw_banner=0
 let g:buffergator_suppress_keymaps=1
 
 let test#strategy = 'dispatch'
-map <leader>s :TestFile<cr>
-map <leader>S :TestSuite<cr>
-map <leader>n :TestNearest<cr>
-map <leader>N :TestLast<cr>
-map <leader>f :TestSuite --next-failure<cr>
-map <leader>F :TestSuite --only-failure<cr>
+map <leader>ss :TestFile<cr>
+map <leader>sa :TestSuite<cr>
+map <leader>sk :TestNearest<cr>
+map <leader>sl :TestLast<cr>
+map <leader>sn :TestSuite --next-failure<cr>
+map <leader>sf :TestSuite --only-failure<cr>
 " map <leader>w :!bundle exec cucumber -pwip<cr>
 " map <leader>c :!bundle exec cucumber<cr>
 
@@ -190,7 +190,13 @@ let g:ale_ruby_standardrb_executable='bundle'
 
 let g:airline#extensions#ale#enabled = 1
 
-map <leader>a :ALEFix<cr>
+map <leader>af :ALEFix<cr>
+map <leader>ai :ALEDetail<cr>
+map <leader>adb :ALEDisableBuffer
+map <leader>adg :ALEDisable
+map <leader>aeb :ALEEnableBuffer
+map <leader>aeg :ALEEnable
+map <leader>ag :ALEGoToDefinitionInSplit
 
 " let g:ale_fixers = { 'ruby': ['rubocop'] }
 
