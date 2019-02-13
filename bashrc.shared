@@ -4,6 +4,10 @@ if [ -f /usr/lib/chromium-browser/chromedriver ]; then
   PATH=${PATH}:/usr/lib/chromium-browser
 fi
 
+if hash fdfind 2> /dev/null ; then
+  export  FZF_DEFAULT_COMMAND='fdfind --type f'
+fi
+
 export PATH
 
 export EDITOR=vim
