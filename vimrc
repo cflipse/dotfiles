@@ -21,6 +21,8 @@ Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'othree/html5.vim'
 
+Plug 'skywind3000/asyncrun.vim'
+
 Plug 'mileszs/ack.vim'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-easy-align'
@@ -30,6 +32,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
+"Plug 'thoughtbot/vim-rspec'
 "Plug 'majutsushi/tagbar' 
 
 Plug 'altercation/vim-colors-solarized'
