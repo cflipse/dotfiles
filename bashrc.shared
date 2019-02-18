@@ -94,3 +94,7 @@ tmate-unpair() {
 set-text-zoom() {
   gsettings set org.gnome.desktop.interface text-scaling-factor "$1";
 }
+
+unlock-bw() {
+  export BW_SESSION=$(bw unlock --raw)
+}
