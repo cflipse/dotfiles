@@ -21,7 +21,7 @@ Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'othree/html5.vim'
 
-Plug 'skywind3000/asyncrun.vim'
+" Plug 'skywind3000/asyncrun.vim'
 
 Plug 'mileszs/ack.vim'
 Plug 'godlygeek/tabular'
@@ -35,8 +35,8 @@ Plug 'tpope/vim-commentary'
 "Plug 'thoughtbot/vim-rspec'
 "Plug 'majutsushi/tagbar' 
 
-Plug 'altercation/vim-colors-solarized'
-Plug 'flazz/vim-colorschemes'
+"Plug 'altercation/vim-colors-solarized'
+"Plug 'flazz/vim-colorschemes'
 Plug 'rakr/vim-one'
 
 Plug 'vim-airline/vim-airline'
