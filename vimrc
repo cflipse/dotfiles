@@ -23,7 +23,8 @@ Plug 'othree/html5.vim'
 
 " Plug 'skywind3000/asyncrun.vim'
 
-Plug 'mileszs/ack.vim'
+"Plug 'mileszs/ack.vim'
+Plug 'mhinz/vim-grepper'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-easy-align'
 Plug 'janko-m/vim-test'
@@ -134,11 +135,27 @@ let g:rooter_patterns = ['Rakefile', 'Gemfile', '.git/']
 " keep consistent with fzf
 noremap <leader>t :Files<cr>
 
-map <leader>g :Ack <cword><cr>
+"map <leader>g :Ack <cword><cr>
 " nmap <leader>p :CtrlP<cr>
 " map <Leader>b :BuffergatorOpen<CR>
 
-let g:ackprg = 'ag --vimgrep --smart-case'
+"let g:ackprg = 'ag --vimgrep --smart-case'
+
+
+runtime plugin/grepper.vim
+let g:grepper.tools = ['ag', 'git', 'grep']
+
+nmap gs  <plug>(GrepperOperator)
+xmap gs <plug>(GrepperOperator)
+
+nnoremap <leader>gg :Grepper -tool git<cr>
+nnoremap <leader>ga :Grepper -tool ag<cr>
+nnoremap <leader>gs :Grepper -tool ag -side<cr>
+nnoremap <leader>*  :Grepper -tool ag -cword -noprompt<cr>
+
+let g:grepper.prompt_mapping_tool = '<leader>g'
+
+command! Todo Grepper -noprompt -tool git -query -E '(TODO|FIXME|XXX):'
 
 " highlight last inserted text
 nnoremap gV `[v`]
