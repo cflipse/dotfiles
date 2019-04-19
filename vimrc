@@ -254,6 +254,15 @@ else
   set clipboard=autoselect,unnamedplus,unnamed,exclude:cons\|linux
 endif
 
+function! FzfSpellSink(word)
+  exe 'normal!' "_ciw.a:word
+endfunction
+function! FzfSpell()
+  let suggestions = spellsuggest(expand("<cword>"))
+  return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'down': 10})
+endfunction
+nnoremap z= :call FzfSpell()<CR>
+
 autocmd BufNewFile,BufRead .envrc set syntax=sh
 
 if filereadable(expand("~/.vimrc.local"))
