@@ -111,6 +111,9 @@ set lazyredraw
 set path+=**
 set wildmenu
 
+
+set viewdir="~/.vim/view"
+
 let g:netrw_banner=0
 
 let g:buffergator_suppress_keymaps=1
