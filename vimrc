@@ -86,8 +86,9 @@ call plug#end()
 
 set lcs=tab:»\ ,trail:· list
 
-set foldmethod=indent
-set foldlevelstart=10
+set foldmethod=syntax
+set foldlevelstart=5
+set foldminlines=3
 set foldnestmax=10
 set foldenable
 set guioptions-=T
