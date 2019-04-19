@@ -34,7 +34,7 @@ Plug 'tpope/vim-surround'
 "Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 "Plug 'thoughtbot/vim-rspec'
-"Plug 'majutsushi/tagbar' 
+Plug 'majutsushi/tagbar'
 
 "Plug 'altercation/vim-colors-solarized'
 "Plug 'flazz/vim-colorschemes'
