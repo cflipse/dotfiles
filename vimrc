@@ -255,7 +255,7 @@ set mouse=a
 if has("nvim")
   set clipboard=unnamedplus,unnamed
 else
-  set clipboard=autoselect,unnamedplus,unnamed,exclude:cons\|linux
+  set clipboard=unnamed
 endif
 
 function! FzfSpellSink(word)
