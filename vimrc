@@ -273,3 +273,8 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
+if $TERM_PROFILE == 'dark'
+  set background=dark
+elseif $TERM_PROFILE == 'light'
+  set background=light
+endif
