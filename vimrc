@@ -259,7 +259,7 @@ else
 endif
 
 function! FzfSpellSink(word)
-  exe 'normal!' "_ciw.a:word
+  exe 'normal! "_ciw'.a:word
 endfunction
 function! FzfSpell()
   let suggestions = spellsuggest(expand("<cword>"))
