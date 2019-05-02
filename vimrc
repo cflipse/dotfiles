@@ -253,9 +253,9 @@ set mouse=a
 " Copy unidentified buffers to system clipboard
 
 if has("nvim")
-  set clipboard=unnamedplus,unnamed
+  set clipboard=unnamedplus
 else
-  set clipboard=unnamed
+  set clipboard=unnamedplus
 endif
 
 function! FzfSpellSink(word)
