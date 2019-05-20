@@ -17,7 +17,7 @@ Plug 'direnv/direnv.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'benmills/vimux'
-"Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'othree/html5.vim'
 
@@ -222,21 +222,21 @@ map <leader>ag :ALEGoToDefinitionInSplit
 " let g:ale_fixers = { 'ruby': ['rubocop'] }
 
 " TmuxNavigator configs
-" let g:tmux_navigator_no_mappings = 1
+let g:tmux_navigator_no_mappings = 1
 
-" nnoremap <silent> <ctrl>h :TmuxNavigateLeft<cr>
-" nnoremap <silent> <ctrl>j :TmuxNavigateDown<cr>
-" nnoremap <silent> <ctrl>k :TmuxNavigateUp<cr>
-" nnoremap <silent> <ctrl>l :TmuxNavigateRight<cr>
-" nnoremap <silent> <ctrl>- :TmuxNavigatePrevious<cr>
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <c--> :TmuxNavigatePrevious<cr>
 
-" if has("nvim")
-"   tnoremap <silent> <ctrl>h :TmuxNavigateLeft<cr>
-"   tnoremap <silent> <ctrl>j :TmuxNavigateDown<cr>
-"   tnoremap <silent> <ctrl>k :TmuxNavigateUp<cr>
-"   tnoremap <silent> <ctrl>l :TmuxNavigateRight<cr>
-"   tnoremap <silent> <ctrl>- :TmuxNavigatePrevious<cr>
-" endif
+if has("nvim")
+  tnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+  tnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+  tnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+  tnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+  tnoremap <silent> <c--> :TmuxNavigatePrevious<cr>
+endif
 
 syntax on
 
