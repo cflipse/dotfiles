@@ -139,12 +139,7 @@ let g:rooter_patterns = ['Rakefile', 'Gemfile', '.git/']
 " keep consistent with fzf
 noremap <leader>t :Files<cr>
 
-"map <leader>g :Ack <cword><cr>
-" nmap <leader>p :CtrlP<cr>
-" map <Leader>b :BuffergatorOpen<CR>
-
 "let g:ackprg = 'ag --vimgrep --smart-case'
-
 
 runtime plugin/grepper.vim
 let g:grepper.tools = ['ag', 'git', 'grep']
