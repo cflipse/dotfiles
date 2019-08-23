@@ -23,6 +23,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 
 Plug 'othree/html5.vim'
+Plug 'parkr/vim-jekyll'
 
 " Plug 'mhinz/vim-grepper'
 Plug 'junegunn/vim-easy-align'
@@ -171,6 +172,13 @@ runtime plugin/grepper.vim
 
 " highlight last inserted text
 nnoremap gV `[v`]
+
+" configure jekyll
+let g:jekyll_post_extension = '.md'
+
+
+let g:neocomplcache_enable_cursor_hold_i=1
+let g:neocomplcache_enable_at_startup = 1
 
 hi! Normal cterm=NONE term=NONE ctermfg=12 ctermbg=NONE
 
