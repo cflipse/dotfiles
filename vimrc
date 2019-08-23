@@ -148,6 +148,9 @@ command! -bang -nargs=* Rg
       \           : fzf#vim#with_preview('right:50%:hidden', '?'),
       \   <bang>0)
 
+runtime plugin/grepper.vim
+"let g:grepper.tools = ['ag', 'git', 'grep']
+"
 " runtime plugin/grepper.vim
 " let g:grepper.tools = ['rg', 'git', 'grep']
 
@@ -163,6 +166,7 @@ command! -bang -nargs=* Rg
 
 " command! Todo Grepper -noprompt -tool git -query -E '(TODO|FIXME|XXX):'
 
+"let g:grepper.prompt_mapping_tool = '<leader>g'
 
 
 " highlight last inserted text
