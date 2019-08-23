@@ -229,6 +229,7 @@ map <leader>ag :ALEGoToDefinitionInSplit<cr>
 
 let g:ale_fixers = { 'ruby': ['rubocop'] }
 let g:ale_linters = { 'ruby': [ 'rubocop', 'ruby', 'sorbet' ] }
+let g:ale_ruby_standardrb_executable = 'bundle'
 
 " TmuxNavigator configs
 " let g:tmux_navigator_no_mappings = 1
