@@ -235,6 +235,9 @@ endif
 
 syntax on
 
+" Include tags
+set tags^=./.git/tags;
+
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.ex,*.exs set filetype=elixir
 
