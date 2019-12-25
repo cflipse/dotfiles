@@ -1,3 +1,5 @@
+# vim syntax=bash
+
 [[ ":$PATH:" != *":${HOME}/bin:"* ]] && PATH=${HOME}/bin:${PATH}
 
 if [ -f /usr/lib/chromium-browser/chromedriver ]; then
@@ -52,8 +54,6 @@ tmate-url() {
   echo "$url"
 }
 
-
-
 # Start a new tmate pair session if one doesn't already exist
 # If creating a new session, the first argument can be an existing TMUX session to connect to automatically
 tmate-pair() {
@@ -73,8 +73,6 @@ tmate-pair() {
   fi
   tmate -S "$TMATE_SOCKET_LOCATION" attach-session -t "$TMATE_PAIR_NAME"
 }
-
-
 
 # Close the pair because security
 tmate-unpair() {
@@ -98,3 +96,12 @@ set-text-zoom() {
 unlock-bw() {
   export BW_SESSION=$(bw unlock --raw)
 }
+
+light() {
+  export TERM_PROFILE='light'
+}
+
+dark() {
+  export TERM_PROFILE='dark'
+}
+
