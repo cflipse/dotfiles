@@ -17,11 +17,13 @@ Plug 'direnv/direnv.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'benmills/vimux'
+
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-runner'
 
 Plug 'othree/html5.vim'
 
-" Plug 'skywind3000/asyncrun.vim'
+Plug 'skywind3000/asyncrun.vim'
 
 "Plug 'mileszs/ack.vim'
 Plug 'mhinz/vim-grepper'
@@ -44,6 +46,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
+
+Plug 'ryanoasis/vim-devicons'
 
 "Plug 'jeetsukumaran/vim-buffergator'
 Plug 'tpope/vim-bundler'
@@ -118,7 +122,14 @@ let g:netrw_banner=0
 
 let g:buffergator_suppress_keymaps=1
 
-let test#strategy = 'dispatch'
+let test#strategy = 'vimterminal'
+if has('nvim')
+  let test#strategy = 'neovim'
+endif
+if exists('$TMUX')
+  let test#strategy = 'vtr'
+endif
+
 map <leader>ss :TestFile<cr>
 map <leader>sa :TestSuite<cr>
 map <leader>sk :TestNearest<cr>
@@ -217,21 +228,27 @@ map <leader>ag :ALEGoToDefinitionInSplit
 " let g:ale_fixers = { 'ruby': ['rubocop'] }
 
 " TmuxNavigator configs
-let g:tmux_navigator_no_mappings = 1
+" let g:tmux_navigator_no_mappings = 1
 
-nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
-nnoremap <silent> <c--> :TmuxNavigatePrevious<cr>
+" nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+" nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+" nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+" nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+" nnoremap <silent> <c--> :TmuxNavigatePrevious<cr>
 
 if has("nvim")
-  tnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
-  tnoremap <silent> <c-j> :TmuxNavigateDown<cr>
-  tnoremap <silent> <c-k> :TmuxNavigateUp<cr>
-  tnoremap <silent> <c-l> :TmuxNavigateRight<cr>
-  tnoremap <silent> <c--> :TmuxNavigatePrevious<cr>
+  " tnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+  " tnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+  " tnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+  " tnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+  " tnoremap <silent> <c--> :TmuxNavigatePrevious<cr>
 endif
+
+" TmuxRunner Configs
+
+nmap <leader>rf :VtrFocusRunner<cr>
+nmap <leader>rx :VtrReorientRunner<cr>
+map <leader>rr :VtrSendLinesToRunner<cr>
 
 syntax on
 
