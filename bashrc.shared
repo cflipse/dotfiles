@@ -1,6 +1,7 @@
 # vim syntax=bash
 
 [[ ":$PATH:" != *":${HOME}/bin:"* ]] && PATH=${HOME}/bin:${PATH}
+[[ ":$PATH:" != *":${HOME}/.local/bin:"* ]] && PATH=${HOME}/.local/bin:${PATH}
 
 if [ -f /usr/lib/chromium-browser/chromedriver ]; then
   PATH=${PATH}:/usr/lib/chromium-browser
