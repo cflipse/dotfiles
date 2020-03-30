@@ -1,7 +1,35 @@
-source /usr/src/chruby/share/chruby/chruby.sh
+find_up_() {
+  (
+    while true; do
+      for v in "${@}"; do
+        if [[ -f "${v}" ]] ; then
+          echo "${PWD}/${v}"
+          return 0
+        fi
+      done
+
+      if [[ "${PWD}" == / ]] || [[ "${PWD}" == // ]]; then
+        return 1
+      fi
+
+      cd ..
+    done
+  )
+}
+
+read_version_file() {
+  local file
+  file="$(find_up_ "${@}")"
+
+  [[ -z "${file}" ]] && return
+
+  watch_file "${file}"
+  ruby -e "puts ARGF.readline" 2> /dev/null "${file}"
+}
 
 use_ruby() {
   local ver=$1
+  local rubies=$HOME/.rubies/
 
   if [[ -z $ver ]] && [[ -f .ruby-version ]]; then
     ver=$(cat .ruby-version)
@@ -12,7 +40,22 @@ use_ruby() {
     exit 1
   fi
 
-  chruby $ver
+  load_prefix "${rubies}/${ver}"
+}
 
-  layout ruby
+use_chruby() {
+  local version
+  version="${1}"
+
+  [[ -z "${version}" ]] && version="$(read_version_file .ruby-version)"
+  [[ "${version}" == --auto ]] && version="$(read_version_file .ruby-version)"
+  [[ -z "${version}" ]] && return
+
+  local chruby
+  [[ -e "/usr/local/share/chruby/chruby.sh" ]] && chruby=/usr/local/share/chruby/chruby.sh
+
+  [[ -z "${chruby}" ]] && return
+
+  source "${chruby}"
+  chruby "${version}"
 }
