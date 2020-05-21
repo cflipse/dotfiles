@@ -1,25 +1,6 @@
-find_up_() {
-  (
-    while true; do
-      for v in "${@}"; do
-        if [[ -f "${v}" ]] ; then
-          echo "${PWD}/${v}"
-          return 0
-        fi
-      done
-
-      if [[ "${PWD}" == / ]] || [[ "${PWD}" == // ]]; then
-        return 1
-      fi
-
-      cd ..
-    done
-  )
-}
-
 read_version_file() {
   local file
-  file="$(find_up_ "${@}")"
+  file="$(find_up "${@}")"
 
   [[ -z "${file}" ]] && return
 
@@ -48,7 +29,7 @@ use_chruby() {
   version="${1}"
 
   [[ -z "${version}" ]] && version="$(read_version_file .ruby-version)"
-  [[ "${version}" == --auto ]] && version="$(read_version_file .ruby-version)"
+  [[ "${version}" == auto ]] && version="$(read_version_file .ruby-version)"
   [[ -z "${version}" ]] && return
 
   local chruby
@@ -58,4 +39,11 @@ use_chruby() {
 
   source "${chruby}"
   chruby "${version}"
+}
+
+layout_bundler() {
+  BUNDLE_BIN=${PWD}/.bundle/bin
+
+  export BUNDLE_BIN
+  PATH_add "$BUNDLE_BIN"
 }
