@@ -17,43 +17,30 @@ Plug 'direnv/direnv.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'benmills/vimux'
+Plug 'skywind3000/asyncrun.vim'
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 
 Plug 'othree/html5.vim'
 
-Plug 'skywind3000/asyncrun.vim'
-
-"Plug 'mileszs/ack.vim'
-Plug 'mhinz/vim-grepper'
-Plug 'godlygeek/tabular'
+" Plug 'mhinz/vim-grepper'
 Plug 'junegunn/vim-easy-align'
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
-"Plug 'thoughtbot/vim-rspec'
-Plug 'majutsushi/tagbar'
-
-"Plug 'altercation/vim-colors-solarized'
-"Plug 'flazz/vim-colorschemes'
-Plug 'rakr/vim-one'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
-Plug 'airblade/vim-rooter'
-
 Plug 'ryanoasis/vim-devicons'
 
-"Plug 'jeetsukumaran/vim-buffergator'
+" Plug 'jeetsukumaran/vim-buffergator'
 Plug 'tpope/vim-bundler'
 
-Plug 'w0rp/Ale'
-Plug 'embear/vim-localvimrc'
+Plug 'dense-analysis/ale'
 
 " GIT
 Plug 'tpope/vim-git'
@@ -63,9 +50,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rake', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
-Plug 'tpope/vim-cucumber', { 'for': 'ruby' }
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
-" Plug 'ngmy/vim-rubocop', { 'for': 'ruby'  }
 
 " Elixir
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
@@ -76,7 +61,7 @@ Plug 'avdgaag/vim-phoenix', { 'for': 'elixir' }
 Plug 'joukevandermaas/vim-ember-hbs'
 
 " GOlang
-Plug 'fatih/vim-go', { 'for': 'go' }
+" Plug 'fatih/vim-go', { 'for': 'go' }
 
 if has('nvim')
   Plug 'kassio/neoterm'
@@ -115,19 +100,19 @@ set lazyredraw
 set path+=**
 set wildmenu
 
-
 set viewdir="~/.vim/view"
 
 let g:netrw_banner=0
-
 let g:buffergator_suppress_keymaps=1
+
+map <leader>b :Buffers<cr>
 
 let test#strategy = 'vimterminal'
 if has('nvim')
   let test#strategy = 'neovim'
 endif
 if exists('$TMUX')
-  let test#strategy = 'vtr'
+  " let test#strategy = 'vtr'
 endif
 
 map <leader>ss :TestFile<cr>
@@ -136,55 +121,64 @@ map <leader>sk :TestNearest<cr>
 map <leader>sl :TestLast<cr>
 map <leader>sn :TestSuite --next-failure<cr>
 map <leader>sf :TestSuite --only-failure<cr>
-" map <leader>w :!bundle exec cucumber -pwip<cr>
-" map <leader>c :!bundle exec cucumber<cr>
 
 function! s:find_git_root()
   return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
 endfunction
 
-command! ProjectFiles execute 'Files' s:find_git_root()
-
-let g:rooter_patterns = ['Rakefile', 'Gemfile', '.git/']
+" command! ProjectFiles execute 'Files' s:find_git_root()
+" let g:rooter_patterns = ['Rakefile', 'Gemfile', '.git/']
 
 " keep consistent with fzf
 noremap <leader>t :Files<cr>
+nnoremap <leader>fg :Ag <cword><cr>
+nnoremap <leader>ft :Tags<cr>
+nnoremap <leader>fC :Commits<cr>
+nnoremap <leader>fc :BCommits<cr>
 
-"let g:ackprg = 'ag --vimgrep --smart-case'
+"set grepprg=ag\ --vimgrep
+set grepprg=ag\ --vimgrep\
+set grepformat=%f:%l:%c:%m
 
-runtime plugin/grepper.vim
-let g:grepper.tools = ['ag', 'git', 'grep']
 
-nmap gs  <plug>(GrepperOperator)
-xmap gs <plug>(GrepperOperator)
+command! -bang -nargs=* Rg
+      \ call fzf#vim#grep(
+      \   'rg --column --line-number --no-heading --color=always --ignore-case '.shellescape(<q-args>), 1,
+      \   <bang>0 ? fzf#vim#with_preview('up:60%')
+      \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+      \   <bang>0)
 
-nnoremap <leader>gg :Grepper -tool git<cr>
-nnoremap <leader>ga :Grepper -tool ag<cr>
-nnoremap <leader>gs :Grepper -tool ag -side<cr>
-nnoremap <leader>*  :Grepper -tool ag -cword -noprompt<cr>
+" runtime plugin/grepper.vim
+" let g:grepper.tools = ['rg', 'git', 'grep']
 
-let g:grepper.prompt_mapping_tool = '<leader>g'
+" nnoremap <leader>gr :Grepper<cr>
+" let g:grepper.prompt_mapping_tool = '<leader>g'
 
-command! Todo Grepper -noprompt -tool git -query -E '(TODO|FIXME|XXX):'
+" nnoremap <leader>gg :Grepper -tool git<cr>
+" nnoremap <leader>ga :Grepper <cr>
+" nnoremap <leader>gs :Grepper -side<cr>
+" nnoremap <leader>*  :Grepper -cword -noprompt<cr>
+
+" let g:grepper.prompt_mapping_tool = '<leader>g'
+
+" command! Todo Grepper -noprompt -tool git -query -E '(TODO|FIXME|XXX):'
+
+
 
 " highlight last inserted text
 nnoremap gV `[v`]
-
-let g:neocomplcache_enable_cursor_hold_i=1
-let g:neocomplcache_enable_at_startup = 1
 
 hi! Normal cterm=NONE term=NONE ctermfg=12 ctermbg=NONE
 
 let g:solarized_termtrans = 1
 
 let g:go_fmt_command = "goimports"
+
 let g:airline_powerline_fonts = 1  " use  the powerline fonts
 " let g:airline#extensions#tabline#enabled = 1
 " let g:airline#extensions#tabline#fnamemod = ':t'
-
 let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
 let g:airline#extensions#quickfix#location_text = 'Location'
-
 let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
 
@@ -193,6 +187,10 @@ if has('nvim')
 
   " leave terminal mode with escape
   tnoremap <Esc> <C-\><C-n>
+endif
+
+if has('vim')
+  tnoremap <Esc> <C-W>N
 endif
 
 " allows cursor change in tmux mode
@@ -208,24 +206,25 @@ let g:ale_sign_error = "◊"
 let g:ale_sign_warning = "•"
 hi link ALEErrorSign    Error
 hi link ALEWarningSign  Warning
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 let g:ale_echo_cursor = 1
 let g:ale_completion_enabled = 1
 let g:ale_sign_column_always = 1
 let g:ale_ruby_rubocop_executable='bundle'
-let g:ale_ruby_standardrb_executable='bundle'
 
 let g:airline#extensions#ale#enabled = 1
 
 map <leader>af :ALEFix<cr>
 map <leader>ai :ALEDetail<cr>
+map <leader>ac :ALEComplete
 map <leader>adb :ALEDisableBuffer
 map <leader>adg :ALEDisable
 map <leader>aeb :ALEEnableBuffer
 map <leader>aeg :ALEEnable
-map <leader>ag :ALEGoToDefinitionInSplit
+map <leader>ag :ALEGoToDefinitionInSplit<cr>
 
-" let g:ale_fixers = { 'ruby': ['rubocop'] }
+let g:ale_fixers = { 'ruby': ['rubocop'] }
+let g:ale_linters = { 'ruby': [ 'rubocop', 'ruby', 'sorbet' ] }
 
 " TmuxNavigator configs
 " let g:tmux_navigator_no_mappings = 1
