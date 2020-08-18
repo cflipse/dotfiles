@@ -8,7 +8,8 @@
 	co = checkout
 	track = branch --track
 	amend = commit --amend
-	review = log -p -b
+	files = diff-tree --no-commit-id --name-only
+	review = log -p
 	lg = log --graph --oneline --decorate --date=short --pretty='%C(auto)%h %C(red)%ad %C(auto,cyan)%aN%C(auto)%d %Creset%s'
 	merges = log --graph --oneline --decorate --date=short --pretty='%C(auto)%h %C(red)%ad %C(auto,cyan)%>(17)%aN %C(auto)%d %s' --first-parent
 	unchanged = update-index --assume-unchanged
