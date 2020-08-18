@@ -7,3 +7,4 @@
 config/secrets.yml
 
 .lvimrc
+tags
