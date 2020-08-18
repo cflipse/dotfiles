@@ -108,5 +108,5 @@ dark() {
 
 
 refs () {
-  ag -i --ignore spec "$1"
+  ag -i --ignore spec "$@"
 }
