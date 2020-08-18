@@ -106,3 +106,7 @@ dark() {
   export TERM_PROFILE='dark'
 }
 
+
+refs () {
+  ag -i --ignore spec "$1"
+}
