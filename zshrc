@@ -11,6 +11,9 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 FZF_BASE=${HOME}/.fzf
 
+# Always console vim
+export EDITOR='vim'
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -64,8 +67,8 @@ FZF_BASE=${HOME}/.fzf
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  bundler
-  chruby
+  # bundler
+  # chruby
   colorize
   docker
   fzf
@@ -84,8 +87,6 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Always console vim
-export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
