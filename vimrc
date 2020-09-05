@@ -44,6 +44,8 @@ Plug 'tpope/vim-bundler'
 
 Plug 'dense-analysis/ale'
 
+Plug 'neoclide/coc.nvim'
+
 " GIT
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
