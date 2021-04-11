@@ -35,6 +35,7 @@
 	path = .gitconfig.local
 [init]
 	templatedir = ~/.git_template
+	defaultBranch = main
 [credential]
 	helper = cache
 [commit]
