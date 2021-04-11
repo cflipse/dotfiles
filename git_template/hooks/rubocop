@@ -1,0 +1,15 @@
+#! /usr/bin/env bash
+
+set -e
+
+# If we've changed the cop configs, run everything.  Otherwise, just check our ruby files
+if [ -n "$(git diff --cached --name-only '.rubocop*')" ]; then 
+  bundle exec rubocop -fq -P
+else
+  files=$(git diff --cached --name-only --diff-filter=AMR '*.rb' '*.rake')
+  if [[ -n $files ]] ; then
+    bundle exec rubocop -fq -P $files
+  else
+    true
+  fi
+fi
