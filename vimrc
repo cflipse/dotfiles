@@ -14,20 +14,12 @@ Plug 'tpope/vim-projectionist'
 
 Plug 'direnv/direnv.vim'
 
-Plug 'tpope/vim-dispatch'
-Plug 'radenling/vim-dispatch-neovim'
-Plug 'benmills/vimux'
+" Plug 'tpope/vim-dispatch'
+" Plug 'christoomey/vim-tmux-navigator'
+
+Plug 'janko-m/vim-test'
 Plug 'skywind3000/asyncrun.vim'
 
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'christoomey/vim-tmux-runner'
-
-Plug 'othree/html5.vim'
-Plug 'parkr/vim-jekyll'
-
-" Plug 'mhinz/vim-grepper'
-Plug 'junegunn/vim-easy-align'
-Plug 'janko-m/vim-test'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
@@ -37,43 +29,34 @@ Plug 'tpope/vim-endwise'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 
-" Plug 'jeetsukumaran/vim-buffergator'
 Plug 'tpope/vim-bundler'
 
 Plug 'dense-analysis/ale'
 
-Plug 'neoclide/coc.nvim'
+" Plug 'majutsushi/tagbar'
+" Plug 'ludovicchabant/vim-gutentags'
+
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " GIT
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 
+
 " Ruby
 Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rake', { 'for': 'ruby' }
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
-Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
-
-" Elixir
-Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
-Plug 'tpope/vim-fireplace', { 'for': 'elixir' }
-Plug 'avdgaag/vim-phoenix', { 'for': 'elixir' }
-
-" JS
-Plug 'joukevandermaas/vim-ember-hbs'
+Plug 'tpope/vim-rake', { 'for': ['ruby', 'erb'] }
+Plug 'tpope/vim-rails', { 'for': ['ruby', 'erb'] }
+Plug 'tpope/gem-browse', { 'for': ['ruby', 'erb'] }
+Plug 'nelstrom/vim-textobj-rubyblock', { 'for': ['ruby', 'erb'] }
 
 " GOlang
-" Plug 'fatih/vim-go', { 'for': 'go' }
-
-if has('nvim')
-  Plug 'kassio/neoterm'
-endif
+Plug 'fatih/vim-go', { 'for': 'go' }
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
 call plug#end()
 
 
@@ -107,9 +90,6 @@ set wildmenu
 set viewdir="~/.vim/view"
 
 let g:netrw_banner=0
-let g:buffergator_suppress_keymaps=1
-
-map <leader>b :Buffers<cr>
 
 let test#strategy = 'vimterminal'
 if has('nvim')
@@ -135,14 +115,16 @@ endfunction
 
 " keep consistent with fzf
 noremap <leader>t :Files<cr>
-nnoremap <leader>fg :Ag <cword><cr>
+nnoremap <leader>fg :Ag<cr>
 nnoremap <leader>ft :Tags<cr>
 nnoremap <leader>fC :Commits<cr>
 nnoremap <leader>fc :BCommits<cr>
 
 "set grepprg=ag\ --vimgrep
-set grepprg=ag\ --vimgrep\
+set grepprg=ag\ --vimgrep\ $*
 set grepformat=%f:%l:%c:%m
+
+map <leader>g :grep -r <cword><cr>
 
 
 command! -bang -nargs=* Rg
@@ -152,33 +134,9 @@ command! -bang -nargs=* Rg
       \           : fzf#vim#with_preview('right:50%:hidden', '?'),
       \   <bang>0)
 
-runtime plugin/grepper.vim
-"let g:grepper.tools = ['ag', 'git', 'grep']
-"
-" runtime plugin/grepper.vim
-" let g:grepper.tools = ['rg', 'git', 'grep']
-
-" nnoremap <leader>gr :Grepper<cr>
-" let g:grepper.prompt_mapping_tool = '<leader>g'
-
-" nnoremap <leader>gg :Grepper -tool git<cr>
-" nnoremap <leader>ga :Grepper <cr>
-" nnoremap <leader>gs :Grepper -side<cr>
-" nnoremap <leader>*  :Grepper -cword -noprompt<cr>
-
-" let g:grepper.prompt_mapping_tool = '<leader>g'
-
-" command! Todo Grepper -noprompt -tool git -query -E '(TODO|FIXME|XXX):'
-
-"let g:grepper.prompt_mapping_tool = '<leader>g'
-
-
-" highlight last inserted text
-nnoremap gV `[v`]
 
 " configure jekyll
 let g:jekyll_post_extension = '.md'
-
 
 let g:neocomplcache_enable_cursor_hold_i=1
 let g:neocomplcache_enable_at_startup = 1
@@ -221,7 +179,7 @@ let g:ale_sign_error = "◊"
 let g:ale_sign_warning = "•"
 hi link ALEErrorSign    Error
 hi link ALEWarningSign  Warning
-let g:ale_fix_on_save = 0
+let g:ale_fix_on_save = 1
 let g:ale_echo_cursor = 1
 let g:ale_completion_enabled = 1
 let g:ale_sign_column_always = 1
@@ -242,33 +200,12 @@ let g:ale_fixers = { 'ruby': ['rubocop'] }
 let g:ale_linters = { 'ruby': [ 'rubocop', 'ruby', 'sorbet' ] }
 let g:ale_ruby_standardrb_executable = 'bundle'
 
-" TmuxNavigator configs
-" let g:tmux_navigator_no_mappings = 1
-
-" nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
-" nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
-" nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
-" nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
-" nnoremap <silent> <c--> :TmuxNavigatePrevious<cr>
-
-if has("nvim")
-  " tnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
-  " tnoremap <silent> <c-j> :TmuxNavigateDown<cr>
-  " tnoremap <silent> <c-k> :TmuxNavigateUp<cr>
-  " tnoremap <silent> <c-l> :TmuxNavigateRight<cr>
-  " tnoremap <silent> <c--> :TmuxNavigatePrevious<cr>
-endif
-
-" TmuxRunner Configs
-
-nmap <leader>rf :VtrFocusRunner<cr>
-nmap <leader>rx :VtrReorientRunner<cr>
-map <leader>rr :VtrSendLinesToRunner<cr>
+let g:gutentags_ctags_tagfile = '.tags'
 
 syntax on
 
 " Include tags
-set tags^=./.git/tags;
+set tags^=.tags;
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.ex,*.exs set filetype=elixir
@@ -303,8 +240,69 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
+let g:rails_projections = {
+      \ "app/controllers/*_controller.rb": {
+      \   "test": [
+      \     "spec/controllers/{}_controller_spec.rb",
+      \     "spec/requests/{}_spec.rb"
+      \   ],
+      \ },
+      \ "spec/requests/*_spec.rb": {
+      \   "alternate": [
+      \     "app/controllers/{}_controller.rb",
+      \   ],
+      \ }}
+
 if $TERM_PROFILE == 'dark'
   set background=dark
 elseif $TERM_PROFILE == 'light'
   set background=light
 endif
+
+
+" COC Configuration
+
+set updatetime=300
+set cmdheight=2
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Add `:Fold` command to fold current buffer.
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
