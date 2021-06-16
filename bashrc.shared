@@ -108,5 +108,7 @@ dark() {
 
 
 refs () {
-  ag -i --ignore spec "$@"
+  local query="$1"
+  shift
+  ag -i "$(echo "$query" | sed 's/_/[-_]?/g')" "$@"
 }
