@@ -42,8 +42,9 @@ use_chruby() {
 }
 
 layout_bundler() {
-  BUNDLE_BIN=${PWD}/.bundle/bin
+  local bundle_bin=${PWD}/.bundle/bin
 
-  export BUNDLE_BIN
-  PATH_add "$BUNDLE_BIN"
+  [[ -d "$bundle_bin" ]] || BUNDLE_BIN=${bundle_bin} bundle binstubs --all
+
+  PATH_add "$bundle_bin"
 }
