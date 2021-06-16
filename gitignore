@@ -7,4 +7,6 @@
 config/secrets.yml
 
 .lvimrc
-tags
+.tags
+
+.solargraph.yml
