@@ -44,7 +44,10 @@ use_chruby() {
 layout_bundler() {
   local bundle_bin=${PWD}/.bundle/bin
   local bundle_path=${PWD}/.bundle/gems
-  export BUNDLE_PATH=${bundle_path}
+
+  bundle config --local path .bundle/gems
+
+  #export BUNDLE_PATH=${bundle_path}
 
   [[ -d "$bundle_bin" ]] || BUNDLE_BIN=${bundle_bin} bundle binstubs --all
 
