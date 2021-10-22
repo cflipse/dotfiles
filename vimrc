@@ -120,6 +120,8 @@ nnoremap <leader>ft :Tags<cr>
 nnoremap <leader>fC :Commits<cr>
 nnoremap <leader>fc :BCommits<cr>
 
+nnoremap <leader>b :Buffer<cr>
+
 "set grepprg=ag\ --vimgrep
 set grepprg=ag\ --vimgrep\ $*
 set grepformat=%f:%l:%c:%m
