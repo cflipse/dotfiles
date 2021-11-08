@@ -1,0 +1,68 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+inherit_from:
+  - .rubocop_pending.yml
+  - .rubocop_todo.yml
+
+AllCops:
+  Exclude:
+    - "bin/**"
+    - "tmp/**/*"
+    - "vendor/**/*"
+    - "node_modules/**/*"
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/RedundantFetchBlock:
+  Enabled: false
+Style/NumericLiterals:
+  Enabled: false
+  Exclude:
+    - db/schema.rb
+
+Style/BlockDelimiters:
+  EnforcedStyle: semantic
+  AllowBracesOnProceduralOneLiners: true
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/EmptyMethod:
+  Enabled: false
+
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
+Layout/ExtraSpacing:
+  AllowForAlignment: true
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/EmptyLinesAroundBlockBody:
+  Exclude:
+    - db/schema.rb
+
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+
+RSpec/DescribeClass:
+  Exclude:
+    - spec/features/**/*
+    - spec/request/**/*
+
+RSpec/ExampleLength:
+  Enabled: false

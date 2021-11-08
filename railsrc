@@ -1,0 +1,7 @@
+--skip-spring
+--skip-coffee
+--skip-active-job
+--skip-sprockets
+--skip-test
+
+--template ~/.dotfiles/rails-template/template.rb
