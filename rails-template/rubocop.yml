@@ -18,6 +18,11 @@ Bundler/OrderedGems:
 
 Style/Documentation:
   Enabled: false
+
+Style/BlockComments:
+  Exclude:
+    - spec/spec_helper.rb
+
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 Style/FrozenStringLiteralComment:

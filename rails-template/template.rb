@@ -2,6 +2,12 @@ def source_paths
   [ __dir__ ]
 end
 
+copy_file "direnv", ".envrc"
+run "direnv allow"
+run "bundle  config --local path .bundle/gems"
+
+uncomment_lines "Gemfile", /gem ['"]redis['"]/
+
 gem_group :test do
   gem "rspec-rails"
   gem "capybara"
@@ -20,9 +26,6 @@ gem "view_components"
 
 # copy_file "dockerignore", ".dockerignore"
 # copy_file "Dockerfile"
-
-copy_file "direnv", ".envrc"
-run "direnv allow"
 
 copy_file "rubocop.yml", ".rubocop.yml"
 copy_file "rubocop_pending.yml", ".rubocop_pending.yml"

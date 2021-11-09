@@ -1,5 +1,4 @@
 --skip-spring
---skip-coffee
 --skip-active-job
 --skip-sprockets
 --skip-test
