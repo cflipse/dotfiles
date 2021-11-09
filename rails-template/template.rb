@@ -23,6 +23,7 @@ gem "rubocop-rspec", require: false
 gem "rubocop-rails", require: false
 
 gem "view_components"
+gem "cssbundling-rails"
 
 # copy_file "dockerignore", ".dockerignore"
 # copy_file "Dockerfile"
