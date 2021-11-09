@@ -2,5 +2,8 @@
 --skip-active-job
 --skip-sprockets
 --skip-test
+--skip-hotwire
+--skip-active-storage
+--skip-javascript
 
 --template ~/.dotfiles/rails-template/template.rb
