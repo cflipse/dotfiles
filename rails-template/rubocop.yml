@@ -2,22 +2,22 @@ require:
   - rubocop-rails
   - rubocop-rspec
 
-inherit_from:
-  - .rubocop_pending.yml
-  - .rubocop_todo.yml
-
 AllCops:
+  DisabledByDefault: true
   Exclude:
     - "bin/**"
     - "tmp/**/*"
     - "vendor/**/*"
     - "node_modules/**/*"
 
-Bundler/OrderedGems:
-  Enabled: false
+Lint:
+  Enabled: true
 
-Style/Documentation:
-  Enabled: false
+
+Bundler/DuplicatedGem:
+  Enabled: true
+
+
 
 Style/BlockComments:
   Exclude:
@@ -25,49 +25,179 @@ Style/BlockComments:
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
-Style/FrozenStringLiteralComment:
-  Enabled: false
-Style/RedundantFetchBlock:
-  Enabled: false
-Style/NumericLiterals:
-  Enabled: false
-  Exclude:
-    - db/schema.rb
 
 Style/BlockDelimiters:
   EnforcedStyle: semantic
   AllowBracesOnProceduralOneLiners: true
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
 Style/TrailingCommaInArrayLiteral:
   EnforcedStyleForMultiline: comma
 Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: comma
 
-Style/EmptyMethod:
-  Enabled: false
+
+Style/HashSyntax:
+  Enabled: true
+  EnforcedStyle: no_mixed_keys
+  Exclude:
+    - config/routes.rb
+    - spec/**/*_spec.rb
+
+
+
+Layout/AccessModifierIndentation:
+  EnforcedStyle: outdent
+
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_fixed_indentation
+Layout/ArrayAlignment:
+  EnforcedStyle: with_first_element
+
+Layout/ExtraSpacing:
+  AllowForAlignment: true
+  AllowBeforeTrailingComments: false
+
+Layout/BeginEndAlignment:
+  EnforcedStyleAlignWith: start_of_line
 
 Layout/EndAlignment:
   EnforcedStyleAlignWith: variable
-Layout/ExtraSpacing:
-  AllowForAlignment: true
 
+Layout/BlockAlignment:
+  EnforcedStyleAlignWith: either
+
+Layout/BlockEndNewline:
+  Enabled: true
+
+Layout/CaseIndentation:
+  EnforcedStyle: case
+
+Layout/ClosingHeredocIndentation:
+  Enabled: true
+Layout/ClosingParenthesisIndentation:
+  Enabled: true
+Layout/CommentIndentation:
+  Enabled: true
+
+Layout/DefEndAlignment:
+  Enabled: true
+Layout/DotPosition:
+  EnforcedStyle: leading
+
+Layout/EmptyLines:
+  Enabled: true
+
+Layout/EmptyLinesAroundAccessModifier:
+  EnforcedStyle: around
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+Layout/EmptyLinesAroundMethodBody:
+  Enabled: true
+
+Layout/EndOfLine:
+  EnforcedStyle: crlf
+
+Layout/FirstArgumentIndentation:
+  EnforcedStyle: consistent
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
 Layout/FirstArrayElementIndentation:
   EnforcedStyle: consistent
+Layout/FirstParameterIndentation:
+  EnforcedStyle: consistent
 
-Layout/EmptyLinesAroundBlockBody:
-  Exclude:
-    - db/schema.rb
-
+Layout/HashAlignment:
+  EnforcedLastArgumentHashStyle: ignore_implicit
+  EnforcedHashRocketStyle:
+    - key
+    - table
+  EnforcedColonStyle:
+    - key
+    - table
 
 Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 
+Layout/EmptyLineBetweenDefs:
+  Enabled: true
+
+Layout/HeredocIndentation:
+  Enabled: true
+
+Layout/IndentationConsistency:
+  EnforcedStyle: normal
+
+Layout/IndentationStyle:
+  EnforcedStyle: spaces
+
+Layout/IndentationWidth:
+  Width: true
+
+Layout/InitialIndentation:
+  Enabled: true
+
+Layout/LeadingCommentSpace:
+  Enabled: true
+
+Layout/LeadingEmptyLines:
+  Enabled: true
+
+Layout/EmptyLinesAroundBlockBody:
+  Exclude:
+    - db/schema.rb
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/MultilineArrayBraceLayout:
+  EnforcedStyle: symmetrical
+
+Layout/MultilineHashBraceLayout:
+  EnforcedStyle: symmetrical
+Layout/MultilineMethodCallBraceLayout:
+  EnforcedStyle: symmetrical
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: aligned
+Layout/MultilineMethodDefinitionBraceLayout:
+  EnforcedStyle: symmetrical
+
+Layout/ParameterAlignment:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/RescueEnsureAlignment:
+  Enabled: true
+
+Layout/SpaceAfterColon:
+  Enabled: true
+Layout/SpaceAfterComma:
+  Enabled: true
+Layout/SpaceAfterMethodName:
+  Enabled: true
+Layout/SpaceAfterNot:
+  Enabled: true
+Layout/SpaceAfterSemicolon:
+  Enabled: true
+
+
+
+
+
+
+
+
+
+
+
+
 
 RSpec/DescribeClass:
   Exclude:
     - spec/features/**/*
     - spec/request/**/*
-
-RSpec/ExampleLength:
-  Enabled: false
