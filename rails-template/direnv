@@ -1,0 +1,2 @@
+use chruby
+layout bundler
