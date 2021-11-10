@@ -5,6 +5,7 @@ end
 copy_file "direnv", ".envrc"
 run "direnv allow"
 run "bundle  config --local path .bundle/gems"
+run "bundle  config --local bin .bundle/bin"
 
 uncomment_lines "Gemfile", /gem ['"]redis['"]/
 
@@ -54,7 +55,7 @@ end
 
 # FIRST COMMIT
 after_bundle do
-  run "rubocop -A"
+  run "bundle exec rubocop -A"
 
   git :init
   git add: "."
