@@ -47,3 +47,5 @@
   xfuncname = "^[ \t]*((RSpec|describe|context|it|before|after|around|feature|scenario)[ \t].*)$"
 [includeIf "gitdir:~/do/"]
   path = ~/do/.gitconfig
+[fetch]
+	prune = true
