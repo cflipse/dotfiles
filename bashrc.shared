@@ -112,3 +112,11 @@ refs () {
   shift
   ag -i "$(echo "$query" | sed 's/_/[-_]?/g')" "$@"
 }
+
+
+alpha () {
+  local account="$1"
+  read uri user pass < <(bw get item $account | jq -r ".login.uris[].uri, .login.username, .login.password" | xargs echo)
+
+  mysql --host=$uri --user=$user --password=$pass
+}
