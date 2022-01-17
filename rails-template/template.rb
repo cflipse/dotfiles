@@ -9,7 +9,7 @@ run "bundle  config --local bin .bundle/bin"
 
 uncomment_lines "Gemfile", /gem ['"]redis['"]/
 
-gem "view_components"
+gem "view_component"
 gem "vite_rails"
 
 gem_group :test do
