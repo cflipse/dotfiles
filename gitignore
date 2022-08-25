@@ -10,3 +10,4 @@ config/secrets.yml
 .tags
 
 .solargraph.yml
+config/initializers/definitions.rb

@@ -31,7 +31,8 @@
 [rebase]
 	autosquash = true
 [push]
-	default = simple
+	default = current
+	autoSetupRemote = true
 [include]
 	path = .gitconfig.local
 [init]
