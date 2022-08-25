@@ -30,7 +30,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 " Plug 'ryanoasis/vim-devicons'
 
-Plug 'tpope/vim-bundler'
 
 Plug 'dense-analysis/ale'
 
@@ -46,7 +45,8 @@ Plug 'tpope/vim-fugitive'
 
 " Ruby
 Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rake', { 'for': ['ruby', 'erb'] }
+Plug 'tpope/vim-bundler'
+" Plug 'tpope/vim-rake', { 'for': ['ruby', 'erb'] }
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'erb'] }
 Plug 'tpope/gem-browse', { 'for': ['ruby', 'erb'] }
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': ['ruby', 'erb'] }
@@ -185,6 +185,8 @@ let g:ale_echo_cursor = 1
 let g:ale_completion_enabled = 1
 let g:ale_sign_column_always = 1
 let g:ale_ruby_rubocop_executable='bundle'
+let g:ale_ruby_rubocop_options='--server'
+let g:ale_ruby_standardrb_executable = 'bundle'
 
 let g:airline#extensions#ale#enabled = 1
 
@@ -199,8 +201,6 @@ map <leader>ag :ALEGoToDefinitionInSplit<cr>
 
 let g:ale_fixers = { 'ruby': ['rubocop'] }
 let g:ale_linters = { 'ruby': [ 'rubocop', 'ruby', 'sorbet' ] }
-let g:ale_ruby_standardrb_executable = 'bundle'
-
 let g:gutentags_ctags_tagfile = '.tags'
 
 syntax on
@@ -264,7 +264,7 @@ endif
 " COC Configuration
 
 set updatetime=300
-set cmdheight=2
+" set cmdheight=2
 
 " Use <c-space> to trigger completion.
 if has('nvim')
