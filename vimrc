@@ -36,7 +36,7 @@ Plug 'dense-analysis/ale'
 " Plug 'majutsushi/tagbar'
 " Plug 'ludovicchabant/vim-gutentags'
 
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+" Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " GIT
 Plug 'tpope/vim-git'
