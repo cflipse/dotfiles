@@ -11,3 +11,5 @@ config/secrets.yml
 
 .solargraph.yml
 config/initializers/definitions.rb
+
+nohup.out
