@@ -4,8 +4,7 @@ end
 
 copy_file "direnv", ".envrc"
 run "direnv allow"
-run "bundle  config --local path .bundle/gems"
-run "bundle  config --local bin .bundle/bin"
+run "bundle  config --local path .direnv/ruby"
 
 uncomment_lines "Gemfile", /gem ['"]redis['"]/
 
@@ -21,9 +20,10 @@ gem_group :development, :test do
   gem "dotenv-rails"
   gem "brakeman"
 
-  gem "standard", require: false
-  gem "rubocop", require: false
+  gem "standard", ">= 1.0", require: false
+  gem "rubocop", "~> 1.0", require: false
   gem "rubocop-rspec", require: false
+  gem "rubocop-performance", require: false
   gem "rubocop-rails", require: false
 end
 
