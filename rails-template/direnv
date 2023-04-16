@@ -1,2 +1,6 @@
+layout ruby
 use chruby
-layout bundler
+
+watch_file .ruby-version
+source_up_if_exists
+
