@@ -32,8 +32,6 @@ Plug 'ryanoasis/vim-devicons'
 
 Plug 'godlygeek/tabular'
 
-Plug 'dense-analysis/ale'
-
 " Plug 'majutsushi/tagbar'
 " Plug 'ludovicchabant/vim-gutentags'
 
@@ -56,13 +54,16 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+Plug 'junegunn/vim-easy-align'
+
 if has('nvim')
   Plug 'neovim/nvim-lspconfig'
 endif
 
-
-call plug#end()
-
+" Color schemes
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'flazz/vim-colorschemes'
+Plug 'morhetz/gruvbox'
 
 set lcs=tab:»\ ,trail:· list
 
@@ -186,8 +187,8 @@ let g:ale_sign_error = "◊"
 let g:ale_sign_warning = "•"
 hi link ALEErrorSign    Error
 hi link ALEWarningSign  Warning
-let g:ale_fix_on_save = 1
-let g:ale_echo_cursor = 1
+let g:ale_fix_on_save = 0
+let g:ale_echo_cursor = 0
 let g:ale_completion_enabled = 1
 let g:ale_sign_column_always = 1
 let g:ale_ruby_rubocop_executable='bundle'
@@ -208,6 +209,8 @@ map <leader>ag :ALEGoToDefinitionInSplit<cr>
 let g:ale_fixers = { 'ruby': ['rubocop'] }
 let g:ale_linters = { 'ruby': [ 'rubocop', 'ruby', 'sorbet' ] }
 let g:gutentags_ctags_tagfile = '.tags'
+
+" Plug 'dense-analysis/ale'
 
 syntax on
 
@@ -239,10 +242,6 @@ nnoremap z= :call FzfSpell()<CR>
 
 autocmd BufNewFile,BufRead .envrc set syntax=sh
 
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
-
 let g:rails_projections = {
       \ "app/controllers/*_controller.rb": {
       \   "test": [
@@ -262,16 +261,20 @@ elseif $TERM_PROFILE == 'light'
   set background=light
 endif
 
+
+call plug#end()
+
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
+
+
 if has('nvim')
 
 lua <<EOF
 
 local lspconfig = require("lspconfig")
-lspconfig.ruby_ls.setup({
-  cmd = { "bundle", "exec", "ruby-lsp" }
-})
-
-lspconfig.solargraph.setup{}
+lspconfig.ruby_ls.setup({})
 
 
 local opts = { noremap=true, silent=true }
