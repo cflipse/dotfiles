@@ -34,6 +34,18 @@ end
 
 copy_file "rubocop.yml", ".rubocop.yml"
 
+application do
+  <<-END
+    # Configure generateor defaults.
+    config.generators do |g|
+      g.helper false
+      g.test_framework :rspec
+      g.system_test :rspec
+      g.orm :active_record, primary_key_type: :uuid
+    end
+  END
+end
+
 # install stuff
 after_bundle do
   # run "bundle exec vite install"
