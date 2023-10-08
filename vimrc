@@ -208,14 +208,14 @@ map <leader>ag :ALEGoToDefinitionInSplit<cr>
 
 let g:ale_fixers = { 'ruby': ['rubocop'] }
 let g:ale_linters = { 'ruby': [ 'rubocop', 'ruby', 'sorbet' ] }
-let g:gutentags_ctags_tagfile = '.tags'
+" let g:gutentags_ctags_tagfile = '.tags'
 
 " Plug 'dense-analysis/ale'
 
 syntax on
 
 " Include tags
-set tags^=.tags;
+" set tags^=.tags;
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.ex,*.exs set filetype=elixir

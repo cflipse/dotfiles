@@ -10,8 +10,10 @@ run "bundle  config --local path .direnv/ruby"
 
 uncomment_lines "Gemfile", /gem ['"]redis['"]/
 
+use_vite = ask "Use vite?"
+
 gem "view_component"
-# gem "vite_rails"
+gem "vite_rails" if use_vite
 
 gem_group :test do
   gem "rspec-rails"
@@ -36,7 +38,7 @@ copy_file "rubocop.yml", ".rubocop.yml"
 
 application do
   <<-END
-    # Configure generateor defaults.
+    # Configure generator defaults.
     config.generators do |g|
       g.helper false
       g.test_framework :rspec
@@ -46,41 +48,55 @@ application do
   END
 end
 
-# install stuff
+# install rspec
 after_bundle do
-  # run "bundle exec vite install"
-  # inject_into_file('vite.config.ts', "import FullReload from 'vite-plugin-full-reload'\n", after: %(from 'vite'\n))
-  # inject_into_file('vite.config.ts', "import StimulusHMR from 'vite-plugin-stimulus-hmr'\n", after: %(from 'vite'\n))
-  # inject_into_file('vite.config.ts', "import WindiCSS from 'vite-plugin-windicss'\n", after: %(from 'vite'\n))
-  # inject_into_file('vite.config.ts', "\n    FullReload(['config/routes.rb', 'app/views/**/*']),", after: 'plugins: [')
-  # inject_into_file('vite.config.ts', "\n    StimulusHMR(),", after: 'plugins: [')
-  # inject_into_file('vite.config.ts', "\n    WindiCSS({
-  #     root: __dirname,
-  #     scan: {
-  #       fileExtensions: ['erb', 'haml', 'html', 'vue', 'js', 'ts', 'jsx', 'tsx'],
-  #       dirs: ['app/views', 'app/frontend'], // or app/javascript, or app/packs
-  #     },
-  #   }),", after: 'plugins: [')
+  generate "rspec:install"
 
-  # run "npm add @rails/ujs @rails/activestorage stimulus stimulus-vite-helpers vite-plugin-stimulus-hmr vite-plugin-full-reload typescript vite-plugin-windicss windicss"
-
-  # generate "rspec:install"
-  # generate "dockerfile"
 end
+
+if use_vite
+  after_bundle do
+    run "bundle exec vite install"
+
+    inject_into_file('vite.config.ts', after: %(from 'vite'\n)) do
+      <<~CONFIG
+      import RubyPlugin from 'vite-plugin-ruby'
+      import FullReload from 'vite-plugin-full-reload'
+      import StimulusHMR from 'vite-plugin-stimulus-hmr'
+      CONFIG
+    end
+
+    inject_into_file('vite.config.ts', after: 'plugins: [') do
+      <<-PLUGINS
+        FullReload(['config/routes.rb', 'app/views/**/*']),
+        StimulusHMR(),
+      PLUGINS
+    end
+
+    run "npm add @rails/activestorage @rails/actioncable @hotwired/stimulus @hotwired/turbo-rails stimulus-vite-helpers vite-plugin-stimulus-hmr vite-plugin-full-reload typescript"
+
+    run "npm install"
+  end
+end
+
 
 # FIRST COMMIT
 after_bundle do
+  generate "rspec:install"
+
   run "bundle exec rubocop -A --no-server"
 
   git :init
   git add: "."
   git commit: "-m 'initial commit'"
+end
 
+# Add docker services
+after_bundle do
   copy_file "docker-compose.yml", "docker-compose.yml"
   copy_file "env", ".env"
   inject_into_file "config/database.yml", %{\n  url: <%= ENV["DATABASE_URL"] %>}, after: "default: &default"
   inject_into_file ".gitignore", "\n!/.env", after: "/.env*", force: true
 
   git add: "."
-  git commit: "-m 'configure docker for services'"
-end
+  git commit: "-m 'configure docker for services'" end
