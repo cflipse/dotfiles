@@ -1,3 +1,5 @@
+# see  https://guides.rubyonrails.org/rails_application_templates.html
+
 def source_paths
   [__dir__]
 end
@@ -20,7 +22,7 @@ gem_group :development, :test do
   gem "dotenv-rails"
   gem "brakeman"
 
-  gem "standard", ">= 1.0", require: false
+  gem "standard"
   gem "rubocop", "~> 1.0", require: false
   gem "rubocop-rspec", require: false
   gem "rubocop-performance", require: false
@@ -50,15 +52,23 @@ after_bundle do
 
   # run "npm add @rails/ujs @rails/activestorage stimulus stimulus-vite-helpers vite-plugin-stimulus-hmr vite-plugin-full-reload typescript vite-plugin-windicss windicss"
 
-  generate "rspec:install"
-  generate "dockerfile"
+  # generate "rspec:install"
+  # generate "dockerfile"
 end
 
 # FIRST COMMIT
 after_bundle do
-  run "bundle exec rubocop -A"
+  run "bundle exec rubocop -A --no-server"
 
   git :init
   git add: "."
   git commit: "-m 'initial commit'"
+
+  copy_file "docker-compose.yml", "docker-compose.yml"
+  copy_file "env", ".env"
+  inject_into_file "config/database.yml", %{\n  url: <%= ENV["DATABASE_URL"] %>}, after: "default: &default"
+  inject_into_file ".gitignore", "\n!/.env", after: "/.env*", force: true
+
+  git add: "."
+  git commit: "-m 'configure docker for services'"
 end

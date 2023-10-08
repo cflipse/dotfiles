@@ -1,0 +1,1 @@
+export DATABASE_URL=postgresql://user:password@$(docker compose port db 5432)/
