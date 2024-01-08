@@ -10,7 +10,7 @@ read_version_file() {
 
 use_ruby() {
   local ver=$1
-  local rubies=${RUBIES:-$HOME/.rubies/}
+  local rubies=${RUBIES:-/opt/rubies}
 
   if [[ -z $ver ]] && [[ -f .ruby-version ]]; then
     ver=$(cat .ruby-version)
