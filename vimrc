@@ -42,10 +42,10 @@ Plug 'tpope/vim-fugitive'
 
 " Ruby
 Plug 'vim-ruby/vim-ruby'
-"Plug 'tpope/vim-bundler'
-" Plug 'tpope/vim-rake', { 'for': ['ruby', 'erb'] }
-"Plug 'tpope/vim-rails', { 'for': ['ruby', 'erb'] }
-"Plug 'tpope/gem-browse', { 'for': ['ruby', 'erb'] }
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-rake', { 'for': ['ruby', 'erb'] }
+Plug 'tpope/vim-rails', { 'for': ['ruby', 'erb'] }
+Plug 'tpope/gem-browse', { 'for': ['ruby', 'erb'] }
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': ['ruby', 'erb'] }
 
 " GOlang
