@@ -15,7 +15,7 @@ Plug 'tpope/vim-projectionist'
 Plug 'direnv/direnv.vim'
 
 " Plug 'tpope/vim-dispatch'
-" Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'janko-m/vim-test'
 Plug 'skywind3000/asyncrun.vim'
