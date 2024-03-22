@@ -50,3 +50,9 @@
   path = ~/do/.gitconfig
 [fetch]
 	prune = true
+[diff]
+	algorithm = histogram
+[url "git@github.com:"]
+	insteadOf = "https://github.com/"
+[merge]
+	conflictsTyle = zdiff3
