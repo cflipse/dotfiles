@@ -27,7 +27,6 @@ Plug 'tpope/vim-commentary'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'godlygeek/tabular'
@@ -38,7 +37,6 @@ Plug 'godlygeek/tabular'
 " GIT
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
-
 
 " Ruby
 Plug 'vim-ruby/vim-ruby'
@@ -58,6 +56,10 @@ Plug 'junegunn/vim-easy-align'
 
 if has('nvim')
   Plug 'neovim/nvim-lspconfig'
+  Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate', 'tag': 'v0.9.2' }
+  Plug 'lewis6991/gitsigns.nvim'
+else
+  Plug 'airblade/vim-gitgutter'
 endif
 
 " Color schemes
