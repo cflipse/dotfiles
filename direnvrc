@@ -13,7 +13,7 @@ use_ruby() {
   local rubies=${RUBIES:-/opt/rubies}
 
   if [[ -z $ver ]] && [[ -f .ruby-version ]]; then
-    ver=$(cat .ruby-version)
+    ver=$(sed -e s/^ruby-// .ruby-version 2> /dev/null)
   fi
 
   if [[ -z $ver ]]; then
