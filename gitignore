@@ -8,8 +8,9 @@ config/secrets.yml
 
 .lvimrc
 .tags
+.ignore
 
-.solargraph.yml
 config/initializers/definitions.rb
 
 nohup.out
+
