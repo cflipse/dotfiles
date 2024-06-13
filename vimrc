@@ -29,6 +29,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 
+" GITHUB copilot
+Plug 'github/copilot.vim'
+
 Plug 'godlygeek/tabular'
 
 " Plug 'majutsushi/tagbar'
