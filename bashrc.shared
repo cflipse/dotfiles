@@ -110,7 +110,7 @@ dark() {
 refs () {
   local query="$1"
   shift
-  ag -i "$(echo "$query" | sed 's/_/[-_]?/g')" "$@"
+  rg -i "$(echo "$query" | sed 's/_/[-_]?/g')" "$@"
 }
 
 
