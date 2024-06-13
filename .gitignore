@@ -4,3 +4,4 @@ vim/plugged
 vim/init.vim
 vim/spell
 vim/autoload/*.old
+mutt/local

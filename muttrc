@@ -2,6 +2,7 @@ source ~/.mutt/settings
 source ~/.mutt/keybindings
 #source ~/.mutt/alias
 source ~/.mutt/color
+source ~/.mutt/local
 
 
 set certificate_file=~/.mutt/certificates
