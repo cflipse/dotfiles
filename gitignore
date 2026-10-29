@@ -14,3 +14,5 @@ config/initializers/definitions.rb
 
 nohup.out
 
+# always ignore gemini history
+.gemini
